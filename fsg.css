@@ -8,19 +8,21 @@
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 */
 
-.sheet-fsg {
+.sheet-fsg {	
+	background-color		:	#645a51;
 	display 				:	grid;
-	grid-template-columns	:	400px 100px;
+	grid-template-columns	:	auto 100px;
 	grid-template-areas		: 	"tabs-nav 		sidebar"
 								"tabs-content	sidebar"
-								"footer			footer"
+								"footer			footer";
 	
 }
 
 .sheet-box {
+		background-color	:	#806f42;
 		display				: 	grid;
-		border				:	3px solid black;
-		padding				:	3px;
+		border				:	1px solid #b5a883;
+		margin				:	2px;
 }
 
 div.sheet-tabs-nav {
