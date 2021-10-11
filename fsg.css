@@ -22,6 +22,7 @@
 		background-color	: #c2af80;
 		display				: grid;
 		border				: 1px solid #b5a883;
+		border-radius		: 10px;
 		margin				: 2px;
 }
 
@@ -102,7 +103,28 @@ input.sheet-text {
 	color					: black;
 }
 
+input.sheet-number {
+	width					: 25px !important;
+	border					: 0;
+	background-color		: rgba(0, 0, 0, 0);
+	color					: black;
+	-moz-appearance			: textfield;
+}
+
+img.sheet-reserve-image {
+	width					: 35px;	
+}
+
 span.sheet-title {
 	background-color		: #d4b938;
 	font-weight				: bold;
+	border-radius			: 10px;
+}
+
+span.sheet-reserve {
+	position				: relative;
+	left					: -10px;
+	border					: 1px black;
+	border-style			: solid solid solid none;	
+	border-radius			: 10px;
 }
