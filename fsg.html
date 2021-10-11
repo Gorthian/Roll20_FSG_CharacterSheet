@@ -9,68 +9,70 @@
 //-->
 
 <!-- Sheet //-->
-<div class="wrapper content fsg">
-	<div class="box tabs-nav">
+<div class="sheet-wrapper sheet-content sheet-fsg">
+	<div class="sheet-box sheet-tabs-nav">
 		<label>Tabs-Navigation</label>
 	</div>
-	<div class="container tabs-content">
-		<div class="general">
-			<div class="box name">
-				<span class="title">
-					<input type="text" class="text" name="attr_name" placeholder="Name" />
-					<input type="text" class="text" name="attr_class" placeholder="Klasse" />
+	<div class="sheet-container sheet-tabs-content">
+		<div class="sheet-general">
+			<div class="sheet-box sheet-name">
+				<span class="sheet-title">
+					<input type="text" class="sheet-text" name="attr_name" placeholder="Name" />
+					<input type="text" class="sheet-text" name="attr_class" placeholder="Klasse" />
 				</span>
 			</div>
-			<div class="box eat">
-				<span class="title" data-i18n="like-eating-u"></span>
+			<div class="sheet-box sheet-eat">
+				<span class="sheet-title" data-i18n="like-eating-u"></span>
 				<span>
 					<span data-i18n="tasty-u"></span> <input type="radio" name="attr_like-eating" value="1" />
 					<span data-i18n="spicey-u"></span> <input type="radio" name="attr_like-eating" value="2" />
 					<span data-i18n="sweet-u"></span> <input type="radio" name="attr_like-eating" value="3" />
 				</span>
 			</div>
-			<div class="box drink">
-				<span class="title" data-i18n="like-drinking-u"></span>
+			<div class="sheet-box sheet-drink">
+				<span class="sheet-title" data-i18n="like-drinking-u"></span>
 				<span>
 					<span data-i18n="tea-u"></span> <input type="radio" name="attr_like-drinking" value="1" />
 					<span data-i18n="coffee-u"></span> <input type="radio" name="attr_like-drinking" value="2" />
 					<span data-i18n="beer-u"></span> <input type="radio" name="attr_like-drinking" value="3" />
 				</span>
 			</div>
-			<div class="box home">
-				<span class="title" data-i18n="home-religion-u"></span>
-				<input type="text" class="text" name="attr_home" placeholder="Heimat" />
-				<input type="text" class="text" name="attr_religion" placeholder="Religion" />
+			<div class="sheet-box sheet-home">
+				<span class="sheet-title" data-i18n="home-religion-u"></span>
+				<input type="text" class="sheet-text" name="attr_home" placeholder="Heimat" />
+				<input type="text" class="sheet-text" name="attr_religion" placeholder="Religion" />
 			</div>
-			<div class="box languages">
-				<span class="title" data-i18n="languages-u"></span>
-				--- Sprachen einfügen ---
+			<div class="sheet-box sheet-languages">
+				<span class="sheet-title" data-i18n="languages-u"></span>
+				<fieldset class="repeating_languages">
+					<input type="text" class="sheet-text" name="attr_language" placeholder="Sprache" />
+				</fieldset>
 			</div>
-			<div class="box reserves">
-				<span class="title"><span data-i18n="reserves-u"></span> <span data-i18n="max-current-u"></span></span>
+			<div class="sheet-box sheet-reserves">
+				<span class="sheet-title"><span data-i18n="reserves-u"></span> <span data-i18n="max-current-u"></span></span>
 				--- Reserven einfügen ---
 			</div>
-			<div class="box who">
-				<span class="title" data-i18n="who-are-you-u"></span>
+			<div class="sheet-box sheet-who">
+				<span class="sheet-title" data-i18n="who-are-you-u"></span>
 				--- Wer bist Du einfügen ---
 			</div>
-			<div class="box attributes">
-				<span class="title" data-i18n="attributes-u"></span>
+			<div class="sheet-box sheet-attributes">
+				<span class="sheet-title" data-i18n="attributes-u"></span>
 				--- Attribute einfügen ---
 			</div>
-			<div class="box skills">
-				<span class="title" data-i18n="skills-u"></span>
+			<div class="sheet-box sheet-skills">
+				<span class="sheet-title" data-i18n="skills-u"></span>
 				--- Fertigkeiten einfügen ---
 			</div>
-			<div class="box specials">
+			<div class="sheet-box sheet-specials">
 				--- Sonderfertigkeiten einfügen ---
 			</div>
 		</div>
 	</div>
-	<div class="box sidebar">
+	<div class="sheet-box sheet-sidebar">
 		<label>Sidebar</label>
 	</div>
-	<div class="box footer">
+	<div class="sheet-box sheet-footer">
 		<label>Footer</label>
 	</div>
 </div>
