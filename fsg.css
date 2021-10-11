@@ -51,7 +51,12 @@ div.sheet-footer {
 .sheet-general {
 	display					: grid;	
 	grid-template-columns	: 200px	auto auto;
-	grid-template-areas		: 	"name	eat	drink"
+	grid-template-areas		: 	"name eat drink"
+								"home who who"
+								"languages who who"
+								"reserves who who"
+								"attributes specials specials"
+								"skills specials specials";
 }
 
 div.sheet-eat {
@@ -62,9 +67,42 @@ div.sheet-drink {
 	grid-area				: drink;
 }
 
+div.sheet-home {
+	grid-area				: home;
+}
+
+div.sheet-languages {
+	grid-area				: languages;
+}
+
+div.sheet-reserves {
+	grid-area				: reserves;
+}
+
+div.sheet-who {
+	grid-area				: who;
+}
+
+div.sheet-attributes {
+	grid-area				: attributes;
+}
+
+div.sheet-skills {
+	grid-area				: skills;
+}
+
+div.sheet-specials {
+	grid-area				: specials;
+}
+
 input.sheet-text {
 	width					: 98%;
 	border					: 0;
 	background-color		: rgba(0, 0, 0, 0);
 	color					: black;
+}
+
+span.sheet-title {
+	background-color		: #d4b938;
+	font-weight				: bold;
 }

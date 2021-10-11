@@ -16,11 +16,13 @@
 	<div class="container tabs-content">
 		<div class="general">
 			<div class="box name">
-				<input type="text" class="text" name="attr_name" placeholder="name">
-				<input type="text" class="text" name="attr_class" placeholder="class">
+				<span class="title">
+					<input type="text" class="text" name="attr_name" placeholder="Name" />
+					<input type="text" class="text" name="attr_class" placeholder="Klasse" />
+				</span>
 			</div>
 			<div class="box eat">
-				<span data-i18n="like-eating-u"></span>
+				<span class="title" data-i18n="like-eating-u"></span>
 				<span>
 					<span data-i18n="tasty-u"></span> <input type="radio" name="attr_like-eating" value="1" />
 					<span data-i18n="spicey-u"></span> <input type="radio" name="attr_like-eating" value="2" />
@@ -28,12 +30,40 @@
 				</span>
 			</div>
 			<div class="box drink">
-				<span data-i18n="like-drinking-u"></span>
+				<span class="title" data-i18n="like-drinking-u"></span>
 				<span>
 					<span data-i18n="tea-u"></span> <input type="radio" name="attr_like-drinking" value="1" />
 					<span data-i18n="coffee-u"></span> <input type="radio" name="attr_like-drinking" value="2" />
 					<span data-i18n="beer-u"></span> <input type="radio" name="attr_like-drinking" value="3" />
 				</span>
+			</div>
+			<div class="box home">
+				<span class="title" data-i18n="home-religion-u"></span>
+				<input type="text" class="text" name="attr_home" placeholder="Heimat" />
+				<input type="text" class="text" name="attr_religion" placeholder="Religion" />
+			</div>
+			<div class="box languages">
+				<span class="title" data-i18n="languages-u"></span>
+				--- Sprachen einfügen ---
+			</div>
+			<div class="box reserves">
+				<span class="title"><span data-i18n="reserves-u"></span> <span data-i18n="max-current-u"></span></span>
+				--- Reserven einfügen ---
+			</div>
+			<div class="box who">
+				<span class="title" data-i18n="who-are-you-u"></span>
+				--- Wer bist Du einfügen ---
+			</div>
+			<div class="box attributes">
+				<span class="title" data-i18n="attributes-u"></span>
+				--- Attribute einfügen ---
+			</div>
+			<div class="box skills">
+				<span class="title" data-i18n="skills-u"></span>
+				--- Fertigkeiten einfügen ---
+			</div>
+			<div class="box specials">
+				--- Sonderfertigkeiten einfügen ---
 			</div>
 		</div>
 	</div>
