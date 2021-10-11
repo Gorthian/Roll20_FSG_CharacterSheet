@@ -1,0 +1,40 @@
+/*
+	EDITED by 			Gorthian
+	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
+	Version				0.1
+	Letzte Änderung		2021-10-11
+	
+	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
+	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
+*/
+
+.sheet-fsg {
+	display 				:	grid;
+	grid-template-columns	:	400px 100px;
+	grid-template-areas		: 	"tabs-nav 		sidebar"
+								"tabs-content	sidebar"
+								"footer			footer"
+	
+}
+
+.sheet-box {
+		display				: 	grid;
+		border				:	3px solid black;
+		padding				:	3px;
+}
+
+div.sheet-tabs-nav {
+	grid-area				: tabs-nav;
+}
+
+div.sheet-tabs-content {
+	grid-area				: tabs-content;
+}
+
+div.sheet-sidebar {
+	grid-area				: sidebar;
+}
+
+div.sheet-footer {
+	grid-area				: footer;
+}
