@@ -29,5 +29,12 @@
 	"speed-u": "Schnelligkeit",
 	"empathy-u": "Empathie",
 	"perception-u": "Wahrnehmung",
-	"ego-u": "Ego"
+	"ego-u": "Ego",
+	"roguery-u": "Gaunerei",
+	"improvise-u": "Improvisieren",
+	"bargain-u": "Krämerei",
+	"bluff-u": "Bluffen",
+	"guns-u": "Gewehre",
+	"riding-u": "Reiten",
+	"donkey-u": "Eselführer"
 }
