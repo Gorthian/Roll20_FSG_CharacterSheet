@@ -115,6 +115,10 @@ input.sheet-number {
 	-moz-appearance			: textfield;
 }
 
+input.sheet-title {
+	font-weight				: bold;
+}
+
 img.sheet-reserve-image {
 	width					: 35px;	
 }

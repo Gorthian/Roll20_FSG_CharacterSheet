@@ -7,6 +7,7 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 - Wer bist Du?
 - Attribute
 - Fertigkeiten
+- Spezialfähigkeiten
 
 ## 2021-10-11
 - Vorbereitung für den Sheet
