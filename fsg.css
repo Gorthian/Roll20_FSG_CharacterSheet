@@ -56,7 +56,7 @@ div.sheet-footer {
 								"home who who"
 								"languages who who"
 								"reserves who who"
-								"attributes specials specials"
+								"attributes who who"
 								"skills specials specials";
 }
 
@@ -126,10 +126,26 @@ span.sheet-title {
 	border-radius			: 10px;
 }
 
+span.sheet-attribute {
+	border					: 1px black;
+	border-style			: solid;	
+	border-radius			: 10px;
+}
+
+span.sheet-attribute-label {
+	display					: inline-block;
+	width					: 150px;
+	font-weight				: bold;
+}
+
 span.sheet-reserve {
 	position				: relative;
 	left					: -10px;
 	border					: 1px black;
 	border-style			: solid solid solid none;	
 	border-radius			: 10px;
+}
+
+span.sheet-no-line-break {
+	white-space				: nowrap !important;
 }
