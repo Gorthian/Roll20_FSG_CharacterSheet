@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-10-12
+	Letzte Änderung		2021-10-13
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -53,11 +53,10 @@ div.sheet-footer {
 	display					: grid;	
 	grid-template-columns	: 200px	auto auto;
 	grid-template-areas		: 	"name eat drink"
-								"home who who"
-								"languages who who"
-								"reserves who who"
-								"attributes who who"
-								"skills specials specials";
+								"home languages reserves"
+								"attributes specials specials"
+								"skills specials specials"
+								"who who who"
 }
 
 div.sheet-eat {
