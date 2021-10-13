@@ -50,9 +50,10 @@ div.sheet-footer {
 }
 
 div.sheet-status-effects {
-	display					: grid;	
-	grid-template-columns	: auto;
-	grid-template-areas		: 	"stress exhaustion pain hunger misc advantage disadvantage";								
+	display					: grid;
+	gap						: 5px;
+	grid-template-columns	: auto auto auto auto auto auto;
+	grid-template-areas		: 	"stress exhaustion pain hunger misc advantage";								
 }
 
 div.sheet-status-stress {
@@ -147,6 +148,7 @@ textarea.sheet-text {
 
 input.sheet-number {
 	width					: 25px !important;
+	text-align				: center;
 	border					: 0;
 	background-color		: rgba(0, 0, 0, 0);
 	color					: black;
@@ -190,4 +192,24 @@ span.sheet-reserve {
 
 span.sheet-no-line-break {
 	white-space				: nowrap !important;
+}
+
+button.sheet-disadvantage {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/disadvantage.png) !important;
+}
+
+button.sheet-advantage {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/advantage.png) !important;
+}
+
+button.sheet-disadvantage, button.sheet-advantage {
+	width					: 20px;
+	height					: 20px;
+	padding					: 0px;
+	margin					: 0px;
+	background-size			: 20px 20px;
+    background-repeat		: no-repeat;
+    background-color		: rgba(0, 0, 0, 0);
+	text-align				: center;
+	border					: 0;
 }
