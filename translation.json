@@ -36,5 +36,12 @@
 	"bluff-u": "Bluffen",
 	"guns-u": "Gewehre",
 	"riding-u": "Reiten",
-	"donkey-u": "Eselführer"
+	"donkey-u": "Eselführer",
+	"stress-u": "Stress",
+	"exhaustion-u": "Erschöpfung",
+	"pain-u": "Schmerz",
+	"hunger-u": "Hunger",
+	"misc-u": "Sonstiges",
+	"advantage-u": "Vorteil",
+	"disadvantage-u": "Nachteil"
 }
