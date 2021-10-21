@@ -2,91 +2,33 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-10-13
+	Letzte Änderung		2021-10-21
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 */
 
+/************************************/
+/*		GRID-Layout					*/
+/************************************/
+
 .sheet-fsg {	
 	background-color		: #645a51;
 	display 				: grid;
 	grid-template-columns	: auto 100px;
-	grid-template-areas		: 	"status-effects		sidebar"
+	grid-template-areas		: 	"status-effects	sidebar"
 								"sheet-content	sidebar"
+								"who 			who"
 								"footer			footer";
 	
 }
 
-.sheet-box {
-		background-color	: #c2af80;
-		display				: grid;
-		border				: 1px solid #b5a883;
-		border-radius		: 10px;
-		margin				: 2px;
-}
-
-.sheet-container {
-		background-color	: #645a51;
-		display				: grid;
-		border				: none;
-		margin				: 0;
-}
-
-div.sheet-status-effects {
-	grid-area				: status-effects;
-}
-
-div.sheet-content {
-	grid-area				: sheet-content;
-}
-
-div.sheet-sidebar {
-	grid-area				: sidebar;
-}
-
-div.sheet-footer {
-	grid-area				: footer;
-}
-
 div.sheet-status-effects {
 	display					: grid;
+	grid-area				: status-effects;
 	gap						: 5px;
 	grid-template-columns	: auto auto auto auto auto auto;
 	grid-template-areas		: 	"stress exhaustion pain hunger misc advantage";								
-}
-
-div.sheet-status-stress {
-		grid-area			: stress;
-}
-
-div.sheet-status-exhaustion {
-		grid-area			: exhaustion;
-}
-
-div.sheet-status-pain {
-		grid-area			: pain;
-}
-
-div.sheet-status-hunger {
-		grid-area			: hunger;
-}
-
-div.sheet-status-misc {
-		grid-area			: misc;
-}
-
-div.sheet-status-advantage {
-		grid-area			: advantage;
-}
-
-div.sheet-status-disadvantage {
-		grid-area			: disadvantage;
-}
-
-div.sheet-status-stress, div.sheet-status-exhaustion, div.sheet-status-pain, div.sheet-status-hunger,
-div.sheet-status-misc, div.sheet-status-advantage, div.sheet-status-disadvantage {
-		text-align			: center;
 }
 
 div.sheet-general {
@@ -96,7 +38,7 @@ div.sheet-general {
 								"home languages reserves"
 								"attributes specials specials"
 								"skills specials specials"
-								"who who who";
+								"inventory inventory inventory";
 }
 
 div.sheet-eat {
@@ -133,6 +75,74 @@ div.sheet-skills {
 
 div.sheet-specials {
 	grid-area				: specials;
+}
+
+div.sheet-inventory {
+	grid-area				: inventory;
+}
+
+div.sheet-content {
+	grid-area				: sheet-content;
+}
+
+div.sheet-sidebar {
+	grid-area				: sidebar;
+}
+
+div.sheet-footer {
+	grid-area				: footer;
+}
+
+div.sheet-status-stress {
+		grid-area			: stress;
+}
+
+div.sheet-status-exhaustion {
+		grid-area			: exhaustion;
+}
+
+div.sheet-status-pain {
+		grid-area			: pain;
+}
+
+div.sheet-status-hunger {
+		grid-area			: hunger;
+}
+
+div.sheet-status-misc {
+		grid-area			: misc;
+}
+
+div.sheet-status-advantage {
+		grid-area			: advantage;
+}
+
+div.sheet-status-disadvantage {
+		grid-area			: disadvantage;
+}
+
+/************************************/
+/*		Allgemeine Layouts			*/
+/************************************/
+
+.sheet-box {
+		background-color	: #c2af80;
+		display				: grid;
+		border				: 1px solid #b5a883;
+		border-radius		: 10px;
+		margin				: 2px;
+}
+
+.sheet-container {
+		background-color	: #645a51;
+		display				: grid;
+		border				: none;
+		margin				: 0;
+}
+
+div.sheet-status-stress, div.sheet-status-exhaustion, div.sheet-status-pain, div.sheet-status-hunger,
+div.sheet-status-misc, div.sheet-status-advantage, div.sheet-status-disadvantage {
+		text-align			: center;
 }
 
 textarea.sheet-text, input.sheet-text {
