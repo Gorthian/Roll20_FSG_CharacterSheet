@@ -44,5 +44,8 @@
 	"misc-u": "Sonstiges",
 	"advantage-u": "Vorteil",
 	"disadvantage-u": "Nachteil",
-	"inventory-u": "Inventar"
+	"inventory-u": "Inventar",
+	"weapons-u": "Waffen",
+	"armor-u": "Rüstung",
+	"items-u": "Gegenstände"
 }
