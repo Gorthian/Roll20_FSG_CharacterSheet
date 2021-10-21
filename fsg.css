@@ -41,85 +41,41 @@ div.sheet-general {
 								"inventory inventory inventory";
 }
 
-div.sheet-eat {
-	grid-area				: eat;
+div.sheet-eat {grid-area: eat;}
+div.sheet-drink {grid-area: drink;}
+div.sheet-home {grid-area: home;}
+div.sheet-languages {grid-area: languages;}
+div.sheet-reserves {grid-area: reserves;}
+div.sheet-who {grid-area: who;}
+div.sheet-attributes {grid-area: attributes;}
+div.sheet-skills {grid-area: skills;}
+div.sheet-specials {grid-area: specials;}
+div.sheet-inventory {grid-area: inventory;}
+div.sheet-content {grid-area: sheet-content;}
+div.sheet-sidebar {grid-area: sidebar;}
+div.sheet-footer {grid-area: footer;}
+div.sheet-status-stress {grid-area: stress;}
+div.sheet-status-exhaustion {grid-area: exhaustion;}
+div.sheet-status-pain {grid-area: pain;}
+div.sheet-status-hunger {grid-area: hunger;}
+div.sheet-status-misc {grid-area: misc;}
+div.sheet-status-advantage {grid-area: advantage;}
+div.sheet-status-disadvantage {grid-area: disadvantage;}
+
+div.sheet-item {
+	display					: grid;	
+	grid-template-columns	: auto auto auto;
+	grid-template-areas		: 	"item-bonus			item-name 			item-sacrifice-value"
+								"item-damage 		item-range 			item-range"
+								"item-description	item-description	item-description";
 }
 
-div.sheet-drink {
-	grid-area				: drink;
-}
-
-div.sheet-home {
-	grid-area				: home;
-}
-
-div.sheet-languages {
-	grid-area				: languages;
-}
-
-div.sheet-reserves {
-	grid-area				: reserves;
-}
-
-div.sheet-who {
-	grid-area				: who;
-}
-
-div.sheet-attributes {
-	grid-area				: attributes;
-}
-
-div.sheet-skills {
-	grid-area				: skills;
-}
-
-div.sheet-specials {
-	grid-area				: specials;
-}
-
-div.sheet-inventory {
-	grid-area				: inventory;
-}
-
-div.sheet-content {
-	grid-area				: sheet-content;
-}
-
-div.sheet-sidebar {
-	grid-area				: sidebar;
-}
-
-div.sheet-footer {
-	grid-area				: footer;
-}
-
-div.sheet-status-stress {
-		grid-area			: stress;
-}
-
-div.sheet-status-exhaustion {
-		grid-area			: exhaustion;
-}
-
-div.sheet-status-pain {
-		grid-area			: pain;
-}
-
-div.sheet-status-hunger {
-		grid-area			: hunger;
-}
-
-div.sheet-status-misc {
-		grid-area			: misc;
-}
-
-div.sheet-status-advantage {
-		grid-area			: advantage;
-}
-
-div.sheet-status-disadvantage {
-		grid-area			: disadvantage;
-}
+div.sheet-item-bonus{grid-area: item-bonus;}
+div.sheet-item-name{grid-area: item-name;}
+div.sheet-item-sacrifice-value{grid-area: item-sacrifice-value;}
+div.sheet-item-damage{grid-area: item-damage;}
+div.sheet-item-range{grid-area: item-range;}
+div.sheet-item-description{grid-area: item-description;}
 
 /************************************/
 /*		Allgemeine Layouts			*/
@@ -180,7 +136,7 @@ div.sheet-title, span.sheet-title {
 	border-radius			: 10px;
 }
 
-span.sheet-attribute, span.sheet-skill {
+span.sheet-attribute, span.sheet-skill, div.sheet-item input.sheet-number {
 	border					: 1px black;
 	border-style			: solid;	
 	border-radius			: 10px;
