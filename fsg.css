@@ -83,7 +83,7 @@ div.sheet-item-armor {
 	display					: grid;	
 	grid-template-columns	: auto auto auto;
 	grid-template-areas		: 	"item-bonus			item-name 			item-sacrifice-value"
-								"item-armor-value	empty				item-armor-points"
+								"item-armor-value	item-empty			item-armor-points"
 								"item-description	item-description	item-description";
 }
 
@@ -102,6 +102,9 @@ div.sheet-item-sacrifice-value{grid-area: item-sacrifice-value;}
 div.sheet-item-damage{grid-area: item-damage;}
 div.sheet-item-range{grid-area: item-range;}
 div.sheet-item-description{grid-area: item-description;}
+div.sheet-item-armor-value{grid-area: item-armor-value;}
+div.sheet-item-armor-points{grid-area: item-armor-points;}
+div.sheet-item-empty{grid-area: item-empty;}
 
 /************************************/
 /*		Allgemeine Layouts			*/
@@ -204,4 +207,13 @@ button.sheet-disadvantage, button.sheet-advantage {
     background-color		: rgba(0, 0, 0, 0);
 	text-align				: center;
 	border					: 0;
+}
+
+div.sheet-item-name input.sheet-text {
+	text-align				: center;
+	font-weight				: bold;
+}
+
+div.sheet-item-sacrifice-value, div.sheet-item-range, div.sheet-item-armor-points {
+	text-align				: right;
 }
