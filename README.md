@@ -5,6 +5,7 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 
 ## 2021-10-21
 - Neuer Bereich fürs Inventar
+- Kleine Änderungen beim Basisdesign
 
 ## 2021-10-13
 - "Wer bist Du?" ans Ende des Bogens verschoben

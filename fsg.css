@@ -15,7 +15,7 @@
 .sheet-fsg {	
 	background-color		: #645a51;
 	display 				: grid;
-	grid-template-columns	: auto 100px;
+	grid-template-columns	: auto 150px;
 	grid-template-areas		: 	"status-effects	sidebar"
 								"sheet-content	sidebar"
 								"inventory		inventory"
@@ -34,7 +34,7 @@ div.sheet-status-effects {
 
 div.sheet-general {
 	display					: grid;	
-	grid-template-columns	: auto	auto auto;
+	grid-template-columns	: 33.3% 33.3% 33.3%;
 	grid-template-areas		: 	"name eat drink"
 								"home languages reserves"
 								"attributes specials specials"
@@ -64,7 +64,7 @@ div.sheet-status-disadvantage {grid-area: disadvantage;}
 div.sheet-inventory {
 	grid-area				: inventory;
 	display					: grid;	
-	grid-template-columns	: auto auto auto;
+	grid-template-columns	: 33.3% 33.3% 33.3%;
 	grid-template-areas		: 	"weapons	armor	items";
 }
 
