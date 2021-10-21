@@ -68,16 +68,18 @@ div.sheet-inventory {
 	grid-template-areas		: 	"weapons	armor	items";
 }
 
-div.sheet-weapons {
-	grid-area				: weapons;
+div.sheet-weapons {grid-area: weapons;}
+div.sheet-armor {grid-area: armor;}
+div.sheet-items {grid-area: items;}
+
+div.sheet-item-items {
 	display					: grid;	
 	grid-template-columns	: auto auto auto;
 	grid-template-areas		: 	"item-bonus			item-name 			item-sacrifice-value"
 								"item-description	item-description	item-description";
 }
 
-div.sheet-armor {
-	grid-area				: armor;
+div.sheet-item-armor {
 	display					: grid;	
 	grid-template-columns	: auto auto auto;
 	grid-template-areas		: 	"item-bonus			item-name 			item-sacrifice-value"
@@ -85,8 +87,7 @@ div.sheet-armor {
 								"item-description	item-description	item-description";
 }
 
-div.sheet-items {
-	grid-area				: items;
+div.sheet-item-weapons {
 	display					: grid;	
 	grid-template-columns	: auto auto auto;
 	grid-template-areas		: 	"item-bonus			item-name 			item-sacrifice-value"
@@ -94,6 +95,7 @@ div.sheet-items {
 								"item-description	item-description	item-description";
 }
 
+div.sheet-item-title{grid-area: item-title;}
 div.sheet-item-bonus{grid-area: item-bonus;}
 div.sheet-item-name{grid-area: item-name;}
 div.sheet-item-sacrifice-value{grid-area: item-sacrifice-value;}
@@ -160,7 +162,7 @@ div.sheet-title, span.sheet-title {
 	border-radius			: 10px;
 }
 
-span.sheet-attribute, span.sheet-skill, div.sheet-item input.sheet-number {
+span.sheet-attribute, span.sheet-skill, div.sheet-inventory input.sheet-number {
 	border					: 1px black;
 	border-style			: solid;	
 	border-radius			: 10px;
