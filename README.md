@@ -3,6 +3,10 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 
 # History
 
+## 2021-10-22
+- Erste Versuche zur Pool-Berechnung bei Herausforderungen
+- Neue Tokens
+
 ## 2021-10-21
 - Neuer Bereich fürs Inventar
 - Kleine Änderungen beim Basisdesign

@@ -189,6 +189,14 @@ span.sheet-no-line-break {
 	white-space				: nowrap !important;
 }
 
+button.sheet-plus {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/status-plus.png) !important;
+}
+
+button.sheet-minus {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/status-minus.png) !important;
+}
+
 button.sheet-disadvantage {
 	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/disadvantage.png) !important;
 }
@@ -197,7 +205,7 @@ button.sheet-advantage {
 	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/advantage.png) !important;
 }
 
-button.sheet-disadvantage, button.sheet-advantage {
+button.sheet-disadvantage, button.sheet-advantage, button.sheet-plus, button.sheet-minus {
 	width					: 20px;
 	height					: 20px;
 	padding					: 0px;
