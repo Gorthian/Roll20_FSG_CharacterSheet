@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-10-21
+	Letzte Änderung		2021-10-22
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -160,7 +160,7 @@ img.sheet-reserve-image, img.sheet-status-image {
 
 div.sheet-title, span.sheet-title {
 	background-color		: #d4b938;
-	max-height				: fit-content;
+	max-height				: min-content;
 	font-weight				: bold;
 	border-radius			: 10px;
 }
@@ -221,4 +221,17 @@ div.sheet-item-sacrifice-value, div.sheet-item-range, div.sheet-item-armor-point
 div.sheet-footer {
 	text-align				: center;
 	font-weight				: normal;
+}
+
+div.sheet-sidebar {
+	display					: inline-block;
+}
+
+div.sheet-sidebar span.sheet-title {
+	display					: block;
+	width					: 100%;
+}
+
+div.sheet-sidebar select {
+	width					: 100px;
 }

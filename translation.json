@@ -12,7 +12,9 @@
 	"reserves-u": "Reserven",
 	"max-current-u": "(Max/Aktuell)",	
 	"who-are-you-u": "Wer bist Du?",
+	"attribute-u": "Attribut",
 	"attributes-u": "Attribute",
+	"skill-u": "Fertigkeit",
 	"skills-u": "Fertigkeiten",
 	"first-impression-u": "Der erste Eindruck, den Leute von mir haben, ist...",
 	"give-everything-u": "Ich würde alles geben für...",
@@ -47,5 +49,8 @@
 	"inventory-u": "Inventar",
 	"weapons-u": "Waffen",
 	"armor-u": "Rüstung",
-	"items-u": "Gegenstände"
+	"items-u": "Gegenstände",
+	"challenge-u": "Herausforderung",
+	"use-advantage-u": "Vorteile benutzen",
+	"pool-u": "Pool"
 }

@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-10-21
+	Letzte Änderung		2021-10-22
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -213,7 +213,125 @@
 		</div>
 	</div>
 	<div class="sheet-box sheet-sidebar">
-		<label>Sidebar</label>
+		<span class="sheet-title" data-i18n="challenge-u"></span>
+		
+		<table>
+			<tr>
+				<td>
+					<span data-i18n="attribute-u"></span>
+					<select name="attr_challenge_attribute">
+						<option value="strength"><span data-i18n="strength-u">Stärke</span></option>
+						<option value="intuition"><span data-i18n="intuition-u">Intuition</span></option>
+						<option value="dexterity"><span data-i18n="dexterity-u">Geschick</span></option>
+						<option value="intellect"><span data-i18n="intellect-u">Intellekt</span></option>
+						<option value="speed"><span data-i18n="speed-u">Schnelligkeit</span></option>
+						<option value="empathy"><span data-i18n="empathy-u">Empathie</span></option>
+						<option value="perception"><span data-i18n="perception-u">Wahrnehmung</span></option>
+						<option value="ego"><span data-i18n="ego-u">Ego</span></option>
+					</select>
+				</td>
+				<td>
+					<span name="attr_challenge_attribute_value"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="skill-u"></span>
+					<select name="attr_challenge_skill">
+						<option value="roguery"><span data-i18n="roguery-u">Gaunerei</span></option>
+						<option value="improvise"><span data-i18n="improvise-u">Improvisieren</span></option>
+						<option value="bargain"><span data-i18n="bargain-u">Krämerei</span></option>
+						<option value="bluff"><span data-i18n="bluff-u">Bluffen</span></option>
+						<option value="guns"><span data-i18n="guns-u">Gewehre</span></option>
+						<option value="riding"><span data-i18n="riding-u">Reiten</span></option>
+						<option value="donkey"><span data-i18n="donkey-u">Eselführer</span></option>
+						<option value="">--</option>			
+						<option value="strength"><span data-i18n="strength-u">Stärke</span></option>
+						<option value="intuition"><span data-i18n="intuition-u">Intuition</span></option>
+						<option value="dexterity"><span data-i18n="dexterity-u">Geschick</span></option>
+						<option value="intellect"><span data-i18n="intellect-u">Intellekt</span></option>
+						<option value="speed"><span data-i18n="speed-u">Schnelligkeit</span></option>
+						<option value="empathy"><span data-i18n="empathy-u">Empathie</span></option>
+						<option value="perception"><span data-i18n="perception-u">Wahrnehmung</span></option>
+						<option value="ego"><span data-i18n="ego-u">Ego</span></option>
+					</select>
+				</td>
+				<td>
+					<span name="attr_challenge_skill_value"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="use-advantage-u"></span>
+					<select name="attr_challenge_use_advantages">
+						<option value="0" selected>0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>			
+					</select>
+				</td>
+				<td>
+					<span name="attr_challenge_advantages"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="stress-u"></span>
+				</td>
+				<td>
+					<span name="attr_challenge_stress"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="exhaustion-u"></span>
+				</td>
+				<td>
+					<span name="attr_challenge_exhaustion"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="pain-u"></span>
+				</td>
+				<td>
+					<span name="attr_challenge_pain"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="hunger-u"></span>
+				</td>
+				<td>
+					<span name="attr_challenge_hunger"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="misc-u"></span>
+				</td>
+				<td>
+					<span name="attr_challenge_misc"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="inventory-u"></span>
+				</td>
+				<td>
+					<input type="number" class="sheet-number" name="attr_challenge_item_bonus" placeholder="0" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span data-i18n="pool-u"></span>
+				</td>
+				<td>
+					<span name="attr_challenge_pool"></span>
+				</td>
+			</tr>
+		</table>
+		<div style="height:100% !important;">&nbsp;</div>
 	</div>
 	<div class="sheet-box sheet-who">
 		<span class="sheet-title" data-i18n="who-are-you-u"></span>
@@ -243,14 +361,90 @@
 <script type="text/worker">
 	console.log("Hello World");
 	
+	/********************************/
+	/* EVENTS                       */
+	/********************************/
+	
 	/* Buttons für Statusänderungen */
 	const aStats = ["stress","exhaustion","pain","hunger","misc"];	
 	aStats.forEach(function(value) {
 		on(`clicked:${value}_minus`, function() {reduceStatus(value)});
 		on(`clicked:${value}_plus`, function() {raiseStatus(value)});
 	});	
-	on('clicked:get_disadvantage', function() {getDisadvantage()});
-	on('clicked:get_advantage', function() {getAdvantage()});
+	on("clicked:get_disadvantage", function() {getDisadvantage()});
+	on("clicked:get_advantage", function() {getAdvantage()});
+	
+	on("sheet:opened change:challenge_use_advantages change:challenge_attribute change:challenge_skill change:challenge_item_bonus change:stress change:exhaustion change:pain change:hunger change:misc change:advantage", function () {
+		setChallengeValues();
+		recalcChallenge();
+	});
+	
+	/********************************/
+	/* Funktionen                   */
+	/********************************/
+	
+	function setChallengeValues() {
+		console.log("setChallengeValues");
+		getAttrs(["challenge_attribute","challenge_skill","strength","intuition","dexterity","intellect","speed","empathy","perception","ego","roguery","improvise","bargain","bluf","guns","donkey"], function (values) {
+			let aAttributes = {};
+			let iChallengeAttributeValue = values[values["challenge_attribute"]]||0;
+			let iChallengeSkillValue = values[values["challenge_skill"]]||0;
+			
+			aAttributes["challenge_attribute_value"] = iChallengeAttributeValue;
+			aAttributes["challenge_skill_value"] = iChallengeSkillValue;
+			setAttrs(aAttributes);
+		});
+	}
+		
+	function recalcChallenge() {
+		console.log("recalcChallenge");
+		
+		getAttrs(["challenge_attribute_value","challenge_skill_value","challenge_use_advantages","challenge_item_bonus","stress","exhaustion","pain","hunger","misc","advantage"], function (values) {
+			let aAttributes = {};
+			let iChallengeAttributeValue = parseInt(values["challenge_attribute_value"])||0;
+			let iChallengeSkillValue = parseInt(values["challenge_skill_value"])||0;
+			let iUseAdvantages = parseInt(values["challenge_use_advantages"])||0;
+			let iItemBonus = parseInt(values["challenge_item_bonus"])||0;
+			let iStress = parseInt(values["stress"])||0;
+			let iExhaustion = parseInt(values["exhaustion"])||0;
+			let iPain = parseInt(values["pain"])||0;
+			let iHunger = parseInt(values["hunger"])||0;
+			let iMisc = parseInt(values["misc"])||0;
+			let iAdvantages = parseInt(values["advantage"])||0;
+			let iChallengeAdvantages = 0;
+			let iChallengeStress = 0;
+			let iChallengeExhaustion = 0;
+			let iChallengePain = 0;
+			let iChallengeHunger = 0;
+			let iChallengeMisc = 0;
+			let iChallengePool = 0;
+			
+			if (iAdvantages < 0) {
+				iChallengeAdvantages = iAdvantages * 2;
+			} else {
+				iChallengeAdvantages = iUseAdvantages * 2;
+			}
+			iChallengeStress = iStress * -2;
+			iChallengeExhaustion = iExhaustion * -2;
+			iChallengePain = iPain * -2;
+			iChallengeHunger = iHunger * -2;
+			iChallengeMisc = iMisc * -2;
+			
+			iChallengePool = iChallengeAttributeValue + iChallengeSkillValue;
+			iChallengePool = iChallengePool + iChallengeAdvantages;
+			iChallengePool = iChallengePool + iChallengeStress + iChallengeExhaustion + iChallengePain + iChallengeHunger + iChallengeMisc;
+			iChallengePool = iChallengePool + iItemBonus;
+			
+			aAttributes["challenge_advantages"] = iChallengeAdvantages;
+			aAttributes["challenge_stress"] = iChallengeStress;
+			aAttributes["challenge_exhaustion"] = iChallengeExhaustion;
+			aAttributes["challenge_pain"] = iChallengePain;
+			aAttributes["challenge_hunger"] = iChallengeHunger;
+			aAttributes["challenge_misc"] = iChallengeMisc;
+			aAttributes["challenge_pool"] = iChallengePool;
+			setAttrs(aAttributes);			
+		});
+	}
 	
 	function getDisadvantage() {
 		console.log("getDisadvantage");
