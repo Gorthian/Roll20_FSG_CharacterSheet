@@ -265,5 +265,6 @@ div.sheet-sidebar select {
 }
 
 td.sheet-align-right {
-	text-align				: right;
+	text-align				: center;
+	width					: 20px;
 }
