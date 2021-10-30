@@ -128,35 +128,19 @@
 				</span>
 			</div>
 			<div class="sheet-box sheet-skills">
-				<span class="sheet-title" data-i18n="skills-u"></span>
-				<span class="sheet-no-line-break">
-					<span class="sheet-skill-label" data-i18n="roguery-u"></span>
-					<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_roguery" /></span>
-				</span>
-				<span class="sheet-no-line-break">
-					<span class="sheet-skill-label" data-i18n="improvise-u"></span>
-					<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_improvise" /></span>
-				</span>
-				<span class="sheet-no-line-break">
-					<span class="sheet-skill-label" data-i18n="bargain-u"></span>
-					<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_bargain" /></span>
-				</span>
-				<span class="sheet-no-line-break">
-					<span class="sheet-skill-label" data-i18n="bluff-u"></span>
-					<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_bluff" /></span>
-				</span>
-				<span class="sheet-no-line-break">
-					<span class="sheet-skill-label" data-i18n="guns-u"></span>
-					<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_guns" /></span>
-				</span>
-				<span class="sheet-no-line-break">
-					<span class="sheet-skill-label" data-i18n="riding-u"></span>
-					<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_riding" /></span>
-				</span>
-				<span class="sheet-no-line-break">
-					<span class="sheet-skill-label" data-i18n="donkey-u"></span>
-					<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_donkey" /></span>
-				</span>
+				<span class="sheet-title" data-i18n="skills-u"></span>				
+				<fieldset class="repeating_skills">
+					<table>
+						<tr>
+							<td>
+								<span class="sheet-skill-label"><input class="sheet-title" type="text" name="attr_skill_name" /></span>
+							</td>
+							<td>
+								<span class="sheet-skill"><input class="sheet-number" type="number" name="attr_skill_value" /></span>
+							</td>
+						</tr>
+					</table>
+				</fieldset>				
 			</div>
 			<div class="sheet-box sheet-specials">
 				<fieldset class="repeating_specials">
