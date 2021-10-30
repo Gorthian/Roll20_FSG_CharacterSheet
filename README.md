@@ -12,6 +12,9 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 - Kleine Änderungen beim Basisdesign
 - Statuseffekte lassen sich über Action-Buttons steuern
 
+## VLOG
+- Erstes Video mit Hitdice
+
 ## 2021-10-13
 - "Wer bist Du?" ans Ende des Bogens verschoben
 - Leiste für Statuseffekte
