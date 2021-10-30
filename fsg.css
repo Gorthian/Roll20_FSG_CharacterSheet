@@ -211,12 +211,18 @@ button.sheet-advantage {
 
 button.sheet-dice1 {
 	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-1.png) !important;
-	top						: -15px !important;
+	top						: -15px;
 }
 
 button.sheet-dice2 {
 	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-2.png) !important;
-	top						: -15px !important;
+	top						: -15px;
+}
+
+div.sheet-skills button.sheet-dice2 {
+	position				: relative;
+	top						: 0px;
+	left					: 20px;
 }
 
 button.sheet-disadvantage, button.sheet-advantage, button.sheet-plus, button.sheet-minus, button.sheet-dice1, button.sheet-dice2 {
