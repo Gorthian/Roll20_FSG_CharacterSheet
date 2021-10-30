@@ -5,6 +5,7 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 
 ## 2021-10-30
 - Flexible Fertigkeiten
+- Statuseffekte unterdrücken
 
 ## VLOG
 - Zweites Video mit Hitdice

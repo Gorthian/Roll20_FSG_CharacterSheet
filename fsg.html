@@ -312,7 +312,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<span class="sheet-label" data-i18n="pool-u"></span>
 				</td>
 				<td class="sheet-align-right">
@@ -357,6 +357,7 @@
 	aStats.forEach(function(value) {
 		on(`clicked:${value}-minus`, function() {reduceStatus(value)});
 		on(`clicked:${value}-plus`, function() {raiseStatus(value)});
+		on(`change:supress_${value}`, function() {recalcChallenge()});
 	});	
 	on("clicked:get-disadvantage", function() {getDisadvantage()});
 	on("clicked:get-advantage", function() {getAdvantage()});
@@ -420,17 +421,22 @@
 	function recalcChallenge() {
 		console.log("recalcChallenge");
 		
-		getAttrs(["challenge_attribute_value","challenge_skill_value","challenge_use_advantages","challenge_item_bonus","stress","exhaustion","pain","hunger","misc","advantage"], function (values) {
+		getAttrs(["challenge_attribute_value","challenge_skill_value","challenge_use_advantages","challenge_item_bonus","stress","supress_stress","exhaustion","supress_exhaustion","pain","supress_pain","hunger","supress_hunger","misc","supress_misc","advantage"], function (values) {
 			let aAttributes = {};
 			let iChallengeAttributeValue = parseInt(values["challenge_attribute_value"])||0;
 			let iChallengeSkillValue = parseInt(values["challenge_skill_value"])||0;
 			let iUseAdvantages = parseInt(values["challenge_use_advantages"])||0;
 			let iItemBonus = parseInt(values["challenge_item_bonus"])||0;
 			let iStress = parseInt(values["stress"])||0;
+			let sSupressStress = values["supress_stress"]||0;
 			let iExhaustion = parseInt(values["exhaustion"])||0;
+			let sSupressExhaustion = values["supress_exhaustion"]||0;
 			let iPain = parseInt(values["pain"])||0;
+			let sSupressPain = values["supress_pain"]||0;
 			let iHunger = parseInt(values["hunger"])||0;
+			let sSupressHunger = values["supress_hunger"]||0;
 			let iMisc = parseInt(values["misc"])||0;
+			let sSupressMisc = values["supress_misc"]||0;
 			let iAdvantages = parseInt(values["advantage"])||0;
 			let iChallengeAdvantages = 0;
 			let iChallengeStress = 0;
@@ -440,16 +446,28 @@
 			let iChallengeMisc = 0;
 			let iChallengePool = 0;
 			
+			console.log("Supress Stress: " + sSupressStress);
+			
 			if (iAdvantages < 0) {
 				iChallengeAdvantages = iAdvantages * 2;
 			} else {
 				iChallengeAdvantages = iUseAdvantages * 2;
 			}
-			iChallengeStress = iStress * -2;
-			iChallengeExhaustion = iExhaustion * -2;
-			iChallengePain = iPain * -2;
-			iChallengeHunger = iHunger * -2;
-			iChallengeMisc = iMisc * -2;		
+			if (sSupressStress == 0) {
+				iChallengeStress = iStress * -2;
+			}
+			if (sSupressExhaustion == 0) {
+				iChallengeExhaustion = iExhaustion * -2;
+			}
+			if (sSupressPain == 0) {
+				iChallengePain = iPain * -2;
+			}
+			if (sSupressHunger == 0) {
+				iChallengeHunger = iHunger * -2;
+			}
+			if (sSupressMisc == 0) {
+				iChallengeMisc = iMisc * -2;
+			}
 			
 			iChallengePool = iChallengeAttributeValue + iChallengeSkillValue;
 			iChallengePool = iChallengePool + iChallengeAdvantages;
