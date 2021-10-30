@@ -3,6 +3,12 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 
 # History
 
+## 2021-10-30
+- Flexible Fertigkeiten
+
+## VLOG
+- Zweites Video mit Hitdice
+
 ## 2021-10-22
 - Erste Versuche zur Pool-Berechnung bei Herausforderungen
 - Neue Tokens
