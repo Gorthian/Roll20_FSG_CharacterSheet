@@ -217,6 +217,26 @@ button.sheet-disadvantage, button.sheet-advantage, button.sheet-plus, button.she
 	border					: 0;
 }
 
+button.sheet-dice1 {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-1.png) !important;
+}
+
+button.sheet-dice2 {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-2.png) !important;
+}
+
+button.sheet-dice1, button.sheet-dice2 {
+	width					: 10px;
+	height					: 10px;
+	padding					: 0px;
+	margin					: 0px;
+	background-size			: 10px 10px;
+    background-repeat		: no-repeat;
+    background-color		: rgba(0, 0, 0, 0);
+	text-align				: center;
+	border					: 0;
+}
+
 div.sheet-item-name input.sheet-text {
 	text-align				: center;
 	font-weight				: bold;
