@@ -97,36 +97,50 @@
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="strength-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_strength" /></span>
-					<button type="action" class="sheet-dice1" name="act_use_as_attribute_strength">
-					<button type="action" class="sheet-dice2" name="act_use_as_skill_strength">
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_strength" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_strength" />&nbsp;
 				</span>
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="intuition-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_intuition" /></span>
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_intuition" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_intuition" />&nbsp;
 				</span>
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="dexterity-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_dexterity" /></span>
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_dexterity" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_dexterity" />&nbsp;
 				</span>
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="intellect-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_intellect" /></span>
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_intellect" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_intellect" />&nbsp;
 				</span>
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="speed-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_speed" /></span>
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_speed" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_speed" />&nbsp;
 				</span>
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="empathy-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_empathy" /></span>
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_empathy" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_empathy" />&nbsp;
 				</span>
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="perception-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_perception" /></span>
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_perception" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_perception" />&nbsp;
 				</span>
 				<span class="sheet-no-line-break">
 					<span class="sheet-attribute-label" data-i18n="ego-u"></span>
 					<span class="sheet-attribute"><input class="sheet-number" type="number" name="attr_ego" /></span>
+					<button type="action" class="sheet-dice1" name="act_use_as_attribute_ego" />&nbsp;
+					<button type="action" class="sheet-dice2" name="act_use_as_skill_ego" />&nbsp;
 				</span>
 			</div>
 			<div class="sheet-box sheet-skills">
@@ -204,48 +218,20 @@
 		<table>
 			<tr>
 				<td>
-					<span data-i18n="attribute-u"></span>
-					<select name="attr_challenge_attribute">
-						<option value="strength"><span data-i18n="strength-u">Stärke</span></option>
-						<option value="intuition"><span data-i18n="intuition-u">Intuition</span></option>
-						<option value="dexterity"><span data-i18n="dexterity-u">Geschick</span></option>
-						<option value="intellect"><span data-i18n="intellect-u">Intellekt</span></option>
-						<option value="speed"><span data-i18n="speed-u">Schnelligkeit</span></option>
-						<option value="empathy"><span data-i18n="empathy-u">Empathie</span></option>
-						<option value="perception"><span data-i18n="perception-u">Wahrnehmung</span></option>
-						<option value="ego"><span data-i18n="ego-u">Ego</span></option>
-					</select>
+					<span class="sheet-label" name="attr_challenge_attribute_name"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_attribute_value"></span>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<span data-i18n="skill-u"></span>
-					<select name="attr_challenge_skill">
-						<option value="roguery"><span data-i18n="roguery-u">Gaunerei</span></option>
-						<option value="improvise"><span data-i18n="improvise-u">Improvisieren</span></option>
-						<option value="bargain"><span data-i18n="bargain-u">Krämerei</span></option>
-						<option value="bluff"><span data-i18n="bluff-u">Bluffen</span></option>
-						<option value="guns"><span data-i18n="guns-u">Gewehre</span></option>
-						<option value="riding"><span data-i18n="riding-u">Reiten</span></option>
-						<option value="donkey"><span data-i18n="donkey-u">Eselführer</span></option>
-						<option value="">--</option>			
-						<option value="strength"><span data-i18n="strength-u">Stärke</span></option>
-						<option value="intuition"><span data-i18n="intuition-u">Intuition</span></option>
-						<option value="dexterity"><span data-i18n="dexterity-u">Geschick</span></option>
-						<option value="intellect"><span data-i18n="intellect-u">Intellekt</span></option>
-						<option value="speed"><span data-i18n="speed-u">Schnelligkeit</span></option>
-						<option value="empathy"><span data-i18n="empathy-u">Empathie</span></option>
-						<option value="perception"><span data-i18n="perception-u">Wahrnehmung</span></option>
-						<option value="ego"><span data-i18n="ego-u">Ego</span></option>
-					</select>
+					<span class="sheet-label" name="attr_challenge_skill_name"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_skill_value"></span>
 				</td>
-			</tr>
+			</tr>			
 			<tr>
 				<td>
 					<span data-i18n="use-advantage-u"></span>
@@ -256,7 +242,7 @@
 						<option value="3">3</option>			
 					</select>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_advantages"></span>
 				</td>
 			</tr>
@@ -264,7 +250,7 @@
 				<td>
 					<span data-i18n="stress-u"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_stress"></span>
 				</td>
 			</tr>
@@ -272,7 +258,7 @@
 				<td>
 					<span data-i18n="exhaustion-u"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_exhaustion"></span>
 				</td>
 			</tr>
@@ -280,7 +266,7 @@
 				<td>
 					<span data-i18n="pain-u"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_pain"></span>
 				</td>
 			</tr>
@@ -288,7 +274,7 @@
 				<td>
 					<span data-i18n="hunger-u"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_hunger"></span>
 				</td>
 			</tr>
@@ -296,7 +282,7 @@
 				<td>
 					<span data-i18n="misc-u"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_misc"></span>
 				</td>
 			</tr>
@@ -304,7 +290,7 @@
 				<td>
 					<span data-i18n="inventory-u"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<input type="number" class="sheet-number" name="attr_challenge_item_bonus" placeholder="0" />
 				</td>
 			</tr>
@@ -312,7 +298,7 @@
 				<td>
 					<span data-i18n="pool-u"></span>
 				</td>
-				<td>
+				<td class="sheet-align-right">
 					<span name="attr_challenge_pool"></span>
 				</td>
 			</tr>
@@ -345,8 +331,6 @@
 </div>
 
 <script type="text/worker">
-	console.log("Hello World");
-	
 	/********************************/
 	/* EVENTS                       */
 	/********************************/
@@ -360,8 +344,16 @@
 	on("clicked:get_disadvantage", function() {getDisadvantage()});
 	on("clicked:get_advantage", function() {getAdvantage()});
 	
-	on("sheet:opened change:challenge_use_advantages change:challenge_attribute change:challenge_skill change:challenge_item_bonus change:stress change:exhaustion change:pain change:hunger change:misc change:advantage", function () {
-		setChallengeValues();
+	/* Buttons für Auswahl der aktiven Attribute un Fertigkeiten */
+	const aAttr = ["strength","intuition","dexterity","intellect","speed","empathy","perception","ego"];	
+	aAttr.forEach(function(value) {
+		on(`clicked:use_as_attribute_${value}`, function() {setActiveAttribute(value)});
+		on(`clicked:use_as_skill_${value}`, function() {setAttributeAsActiveSkill(value)});
+	});	
+	on("clicked:get_disadvantage", function() {getDisadvantage()});
+	on("clicked:get_advantage", function() {getAdvantage()});
+	
+	on("sheet:opened change:challenge_use_advantages change:challenge_attribute_value change:challenge_skill_value change:challenge_item_bonus change:stress change:exhaustion change:pain change:hunger change:misc change:advantage", function () {
 		recalcChallenge();
 	});
 	
@@ -369,15 +361,28 @@
 	/* Funktionen                   */
 	/********************************/
 	
-	function setChallengeValues() {
-		console.log("setChallengeValues");
-		getAttrs(["challenge_attribute","challenge_skill","strength","intuition","dexterity","intellect","speed","empathy","perception","ego","roguery","improvise","bargain","bluf","guns","donkey"], function (values) {
+	function setActiveAttribute(sAttribute)
+	{
+		console.log("setActiveAttribute");
+		getAttrs([sAttribute], function (values) {
 			let aAttributes = {};
-			let iChallengeAttributeValue = values[values["challenge_attribute"]]||0;
-			let iChallengeSkillValue = values[values["challenge_skill"]]||0;
+			let iAttributeValue = values[sAttribute];
 			
-			aAttributes["challenge_attribute_value"] = iChallengeAttributeValue;
-			aAttributes["challenge_skill_value"] = iChallengeSkillValue;
+			aAttributes["challenge_attribute_name"] =  getTranslationByKey(sAttribute + "-u");
+			aAttributes["challenge_attribute_value"] = iAttributeValue;
+			setAttrs(aAttributes);
+		});
+	}
+	
+	function setAttributeAsActiveSkill(sAttribute)
+	{
+		console.log("setAttributeAsActiveSkill");
+		getAttrs([sAttribute], function (values) {
+			let aAttributes = {};
+			let iAttributeValue = values[sAttribute];
+			
+			aAttributes["challenge_skill_name"] = getTranslationByKey(sAttribute + "-u");
+			aAttributes["challenge_skill_value"] = iAttributeValue;
 			setAttrs(aAttributes);
 		});
 	}
@@ -415,7 +420,8 @@
 			iChallengePain = iPain * -2;
 			iChallengeHunger = iHunger * -2;
 			iChallengeMisc = iMisc * -2;
-			
+		
+			console.log(iChallengeAttributeValue + "+" + iChallengeSkillValue);
 			iChallengePool = iChallengeAttributeValue + iChallengeSkillValue;
 			iChallengePool = iChallengePool + iChallengeAdvantages;
 			iChallengePool = iChallengePool + iChallengeStress + iChallengeExhaustion + iChallengePain + iChallengeHunger + iChallengeMisc;

@@ -173,7 +173,11 @@ span.sheet-attribute, span.sheet-skill, div.sheet-inventory input.sheet-number {
 
 span.sheet-attribute-label, span.sheet-skill-label {
 	display					: inline-block;
-	width					: 150px;
+	width					: 140px;
+	font-weight				: bold;
+}
+
+span.sheet-label {
 	font-weight				: bold;
 }
 
@@ -205,32 +209,22 @@ button.sheet-advantage {
 	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/advantage.png) !important;
 }
 
-button.sheet-disadvantage, button.sheet-advantage, button.sheet-plus, button.sheet-minus {
+button.sheet-dice1 {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-1.png) !important;
+	top						: -15px !important;
+}
+
+button.sheet-dice2 {
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-2.png) !important;
+	top						: -15px !important;
+}
+
+button.sheet-disadvantage, button.sheet-advantage, button.sheet-plus, button.sheet-minus, button.sheet-dice1, button.sheet-dice2 {
 	width					: 20px;
 	height					: 20px;
 	padding					: 0px;
 	margin					: 0px;
 	background-size			: 20px 20px;
-    background-repeat		: no-repeat;
-    background-color		: rgba(0, 0, 0, 0);
-	text-align				: center;
-	border					: 0;
-}
-
-button.sheet-dice1 {
-	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-1.png) !important;
-}
-
-button.sheet-dice2 {
-	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-2.png) !important;
-}
-
-button.sheet-dice1, button.sheet-dice2 {
-	width					: 10px;
-	height					: 10px;
-	padding					: 0px;
-	margin					: 0px;
-	background-size			: 10px 10px;
     background-repeat		: no-repeat;
     background-color		: rgba(0, 0, 0, 0);
 	text-align				: center;
@@ -262,4 +256,8 @@ div.sheet-sidebar span.sheet-title {
 
 div.sheet-sidebar select {
 	width					: 100px;
+}
+
+td.sheet-align-right {
+	text-align				: right;
 }
