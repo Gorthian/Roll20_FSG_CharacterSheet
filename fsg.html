@@ -212,7 +212,7 @@
 		
 		<table>
 			<tr>
-				<td>
+				<td colspan="2">
 					<span class="sheet-label" name="attr_challenge_attribute_name"></span>
 				</td>
 				<td class="sheet-align-right">
@@ -220,7 +220,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<span class="sheet-label" name="attr_challenge_skill_name"></span>
 				</td>
 				<td class="sheet-align-right">
@@ -229,15 +229,21 @@
 			</tr>						
 			<tr>
 				<td>
-					<span class="sheet-label" data-i18n="stress-u"></span>
+					<span class="sheet-label" data-i18n="stress-u"></span>					
 				</td>
-				<td class="sheet-align-right">
+				<td>
+					<input type="checkbox" class="sheet-supress-effect" name="attr_supress_stress" /><span />
+				</td>
+				<td class="sheet-align-right">					
 					<span name="attr_challenge_stress"></span>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<span class="sheet-label" data-i18n="exhaustion-u"></span>
+				</td>
+				<td>
+					<input type="checkbox" class="sheet-supress-effect" name="attr_supress_exhaustion" /><span />
 				</td>
 				<td class="sheet-align-right">
 					<span name="attr_challenge_exhaustion"></span>
@@ -247,6 +253,9 @@
 				<td>
 					<span class="sheet-label" data-i18n="pain-u"></span>
 				</td>
+				<td>
+					<input type="checkbox" class="sheet-supress-effect" name="attr_supress_pain" /><span />
+				</td>
 				<td class="sheet-align-right">
 					<span name="attr_challenge_pain"></span>
 				</td>
@@ -254,6 +263,9 @@
 			<tr>
 				<td>
 					<span class="sheet-label" data-i18n="hunger-u"></span>
+				</td>
+				<td>
+					<input type="checkbox" class="sheet-supress-effect" name="attr_supress_hunger" /><span />
 				</td>
 				<td class="sheet-align-right">
 					<span name="attr_challenge_hunger"></span>
@@ -263,12 +275,15 @@
 				<td>
 					<span class="sheet-label" data-i18n="misc-u"></span>
 				</td>
+				<td>
+					<input type="checkbox" class="sheet-supress-effect" name="attr_supress_misc" /><span />
+				</td>
 				<td class="sheet-align-right">
 					<span name="attr_challenge_misc"></span>
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<span class="sheet-label" data-i18n="inventory-u"></span>
 				</td>
 				<td class="sheet-align-right">
@@ -276,7 +291,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<span class="sheet-no-line-break">						
 						<span class="sheet-label" data-i18n="use-advantage-u"></span>						
 						<select name="attr_challenge_use_advantages">
@@ -292,7 +307,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2">
+				<td colspan="3">
 					<hr/>
 				</td>
 			</tr>

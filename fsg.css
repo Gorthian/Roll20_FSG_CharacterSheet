@@ -268,3 +268,44 @@ td.sheet-align-right {
 	text-align				: center;
 	width					: 20px;
 }
+
+/************************************/
+/*		Fake-Buttons 				*/
+/************************************/
+
+input.sheet-supress-effect {
+	opacity					: 0;
+    width					: 16px;
+    height					: 16px;
+    position				: relative;
+    top						: 5px;
+    left					: 6px;
+    margin					: -10px;
+    cursor					: pointer;
+    z-index					: 1;
+	border					: none;
+}
+
+input.sheet-supress-effect + span::before, input.sheet-supress-effect:checked + span::before
+{
+	margin-right			: 4px;
+    border					: none;
+    line-height				: 14px;
+    text-align				: center;
+    display					: inline-block;
+    vertical-align			: middle;
+	width					: 16px;
+    height					: 16px;
+	content					: "-";
+	background-size			: 16px 16px;
+}
+
+input.sheet-supress-effect + span::before
+{
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/moral-inactive.png) !important;
+}
+
+input.sheet-supress-effect:checked + span::before
+{
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/moral.png) !important;
+}
