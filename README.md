@@ -3,6 +3,9 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 
 # History
 
+## 2021-11-08
+- Bonuswürfel für Herausforderungen
+
 ## 2021-10-30
 - Flexible Fertigkeiten
 - Statuseffekte unterdrücken

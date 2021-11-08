@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-10-30
+	Letzte Änderung		2021-11-08
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -307,20 +307,48 @@
 				</td>
 			</tr>
 			<tr>
+				<td>
+					<span class="sheet-label" data-i18n="buy-bonus-dice-u"></span>
+				</td>				
+				<td class="sheet-align-right" colspan="2">
+					<select name="attr_challenge_bonus_dices">
+						<option value="0" selected>0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
 				<td colspan="3">
 					<hr/>
 				</td>
-			</tr>
+			</tr>		
 			<tr>
 				<td colspan="2">
 					<span class="sheet-label" data-i18n="pool-u"></span>
 				</td>
 				<td class="sheet-align-right">
-					<span name="attr_challenge_pool"></span>
+					<span class="sheet-label" name="attr_challenge_pool"></span>
 				</td>
 			</tr>
 		</table>
-		<div style="height:100% !important;">&nbsp;</div>
+		<table>
+			<tr>
+				<td class="sheet-width-60">
+					<span class="sheet-label" data-i18n="challenge-formula-u"></span>
+				</td>
+				<td>
+					<span class="sheet-label" name="attr_challenge_dices"></span>
+					<img src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-1.png" width="20px"/> + <span class="sheet-label" name="attr_challenge_pool"></span>
+				</td>
+			</tr>			
+		</table>		
+		<div style="height:100% !important; text-align: center; vertical-align: center;">
+			<button type="roll" name="roll_challenge" value="&{template:default} {{name=Herausforderung}} {{Pool=@{challenge_pool}}} {{Würfel=@{challenge_dices}}} {{Ergebnis=[[@{challenge_dices}d10+@{challenge_pool}]]}}"></button>
+		</div>
 	</div>
 	<div class="sheet-box sheet-who">
 		<span class="sheet-title" data-i18n="who-are-you-u"></span>
@@ -370,7 +398,7 @@
 	});	
 	on("clicked:repeating_skills:set-active-skill", function() {setActiveSkill()});
 	
-	on("sheet:opened change:challenge_use_advantages change:challenge_attribute_value change:challenge_skill_value change:challenge_item_bonus change:stress change:exhaustion change:pain change:hunger change:misc change:advantage", function () {
+	on("sheet:opened change:challenge_use_advantages change:challenge_attribute_value change:challenge_skill_value change:challenge_item_bonus change:stress change:exhaustion change:pain change:hunger change:misc change:advantage change:challenge_bonus_dices", function () {
 		recalcChallenge();
 	});
 	
@@ -421,8 +449,9 @@
 	function recalcChallenge() {
 		console.log("recalcChallenge");
 		
-		getAttrs(["challenge_attribute_value","challenge_skill_value","challenge_use_advantages","challenge_item_bonus","stress","supress_stress","exhaustion","supress_exhaustion","pain","supress_pain","hunger","supress_hunger","misc","supress_misc","advantage"], function (values) {
+		getAttrs(["challenge_bonus_dices","challenge_attribute_value","challenge_skill_value","challenge_use_advantages","challenge_item_bonus","stress","supress_stress","exhaustion","supress_exhaustion","pain","supress_pain","hunger","supress_hunger","misc","supress_misc","advantage"], function (values) {
 			let aAttributes = {};
+			let iChallengeBonusDices = parseInt(values["challenge_bonus_dices"])||0;
 			let iChallengeAttributeValue = parseInt(values["challenge_attribute_value"])||0;
 			let iChallengeSkillValue = parseInt(values["challenge_skill_value"])||0;
 			let iUseAdvantages = parseInt(values["challenge_use_advantages"])||0;
@@ -473,7 +502,15 @@
 			iChallengePool = iChallengePool + iChallengeAdvantages;
 			iChallengePool = iChallengePool + iChallengeStress + iChallengeExhaustion + iChallengePain + iChallengeHunger + iChallengeMisc;
 			iChallengePool = iChallengePool + iItemBonus;
+			iChallengePool = iChallengePool - (iChallengeBonusDices * 5);
 			
+			while (iChallengePool < 0 && iChallengeBonusDices > 0) {
+				iChallengeBonusDices = iChallengeBonusDices - 1;
+				iChallengePool = iChallengePool + 5;
+			}
+			
+			aAttributes["challenge_bonus_dices"] = iChallengeBonusDices;
+			aAttributes["challenge_dices"] = iChallengeBonusDices+1;
 			aAttributes["challenge_advantages"] = iChallengeAdvantages;
 			aAttributes["challenge_stress"] = iChallengeStress;
 			aAttributes["challenge_exhaustion"] = iChallengeExhaustion;
