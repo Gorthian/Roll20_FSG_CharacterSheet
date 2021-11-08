@@ -237,6 +237,29 @@ button.sheet-disadvantage, button.sheet-advantage, button.sheet-plus, button.she
 	border					: 0;
 }
 
+button.sheet-challenge {
+	position				: relative;
+	width					: 60px;
+	height					: 60px;
+	top						: 30px;
+	padding					: 0px;
+	margin					: 0px;
+	background-size			: 60px 60px;
+    background-repeat		: no-repeat;
+    background-color		: rgba(0, 0, 0, 0);
+	text-align				: center;
+	border					: 0;
+	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/dice-flash.png) !important;
+}
+
+button.sheet-challenge::before {
+    display:none;
+}
+
+button.sheet-challenge:hover{
+  background-position: 0;
+}
+
 div.sheet-item-name input.sheet-text {
 	text-align				: center;
 	font-weight				: bold;
