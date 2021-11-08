@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-10-30
+	Letzte Änderung		2021-11-08
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -292,8 +292,8 @@ td.sheet-align-right {
 	width					: 20px;
 }
 
-td.sheet-width-60 {
-	width					: 60%;
+td.sheet-width-50 {
+	width					: 50%;
 }
 
 /************************************/
