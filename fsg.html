@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-11-08
+	Letzte Änderung		2021-11-09
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -347,7 +347,7 @@
 			</tr>			
 		</table>		
 		<div style="height:100% !important; text-align: center; vertical-align: center;">
-			<button type="roll" class="sheet-challenge" name="roll_challenge" value="&{template:default} {{name=Herausforderung}} {{Pool=@{challenge_pool}}} {{Würfel=@{challenge_dices}}} {{Ergebnis=[[@{challenge_dices}d10+@{challenge_pool}]]}}"></button>
+			<button type="roll" class="sheet-challenge" name="roll_challenge" value="&{template:challenge} {{pool=@{challenge_pool}}} {{dices=@{challenge_dices}}} {{result=[[@{challenge_dices}d10+@{challenge_pool}]]}}"></button>
 		</div>
 	</div>
 	<div class="sheet-box sheet-who">
@@ -375,6 +375,27 @@
 	</div>
 </div>
 
+<!-- Roll Templates //-->
+<rolltemplate class="sheet-rolltemplate-challenge">
+	<div class="sheet-template-container">
+		<div class="sheet-template-header"><span data-i18n="challenge-u"></span></div>
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="pool-u"></span>:</div>
+			<div class="sheet-template-value">{{pool}}</div>			
+		</div>
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="dices-u"></span>:</div>
+			<div class="sheet-template-value">{{dices}}</div>
+			 
+		</div>
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="result-u"></span>:</div>
+			<div class="sheet-template-value">{{result}}</div>			 
+		</div>
+	</div>
+</rolltemplate>
+
+<!-- Sheet Workers //-->
 <script type="text/worker">
 	/********************************/
 	/* EVENTS                       */

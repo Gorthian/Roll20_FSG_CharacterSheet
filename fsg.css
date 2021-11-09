@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				0.1
-	Letzte Änderung		2021-11-08
+	Letzte Änderung		2021-11-09
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -335,4 +335,37 @@ input.sheet-supress-effect + span::before
 input.sheet-supress-effect:checked + span::before
 {
 	background-image		: url(https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/moral.png) !important;
+}
+
+/************************************/
+/*		Roll Templates 				*/
+/************************************/
+
+.sheet-rolltemplate-challenge .sheet-template-container {
+	border					: 1px solid;
+	background-color		: #645a51 !important;
+}
+
+.sheet-rolltemplate-challenge .sheet-template-header {
+	background-color		: #d4b938;
+	max-height				: min-content;
+	font-weight				: bold;
+	border-radius			: 10px;
+}
+
+.sheet-rolltemplate-challenge .sheet-template-row {
+	background-color		: #c2af80 !important;
+	font-weight				: bold;
+
+	display					: grid;
+	grid-template-columns	: 80% 20%;
+	grid-template-areas		: "key value";
+}
+
+.sheet-rolltemplate-challenge .sheet-template-key {
+	grid-area				: key;
+}
+
+.sheet-rolltemplate-challenge .sheet-template-value {
+	grid-area				: value;
 }
