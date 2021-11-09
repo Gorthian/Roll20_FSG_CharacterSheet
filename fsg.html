@@ -383,14 +383,15 @@
 			<div class="sheet-template-key"><span data-i18n="pool-u"></span>:</div>
 			<div class="sheet-template-value">{{pool}}</div>			
 		</div>
+		{{#allprops() pool result}}
 		<div class="sheet-template-row">
-			<div class="sheet-template-key"><span data-i18n="dices-u"></span>:</div>
-			<div class="sheet-template-value">{{dices}}</div>
-			 
+			<div class="sheet-template-key"><span data-i18n="dice-u"></span> {{key}}:</div>
+			<div class="sheet-template-value">{{value}}</div>
 		</div>
+		{{/allprops() pool result}}
 		<div class="sheet-template-row">
 			<div class="sheet-template-key"><span data-i18n="result-u"></span>:</div>
-			<div class="sheet-template-value">{{result}}</div>			 
+			<div class="sheet-template-value">{{computed::1}}</div>			 
 		</div>
 	</div>
 </rolltemplate>
@@ -432,11 +433,35 @@
 	function rollChallenge()
 	{
 		console.log("rollChallenge");
-		startRoll("&{template:challenge} {{pool=@{challenge_pool}}} {{dices=@{challenge_dices}}} {{result=[[@{challenge_dices}d10+@{challenge_pool}]]}}", (results) => {
-				finishRoll(
-					results.rollId,{roll1: 0}
-				);
-		});		
+		getAttrs(["challenge_pool","challenge_dices"], function (values){
+			let iChallengePool = values["challenge_pool"]||0;
+			let iChallengeDices = values["challenge_dices"]||1;
+			let iCounter = 1;
+			let iRollSum = iChallengePool;
+			let sRoll = ""
+
+			sRoll = "&{template:challenge} {{pool=@{challenge_pool}}}"
+			while (iCounter <= iChallengeDices) {
+				sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
+				iCounter = iCounter + 1;
+			}
+
+			console.log(sRoll);
+			startRoll(sRoll, (results) => {
+					iCounter = iCounter - 1;
+					while (iCounter > 0)
+					{
+						iRollSum = iRollSum + results.results[iCounter].result;
+						iCounter = iCounter - 1;
+					}
+					console.log("Summe : " + iRollSum)
+					finishRoll(
+						results.rollId, {
+							1: iRollSum
+						}
+					);
+			});
+		});				
 	}
 	
 	function setActiveSkill()
