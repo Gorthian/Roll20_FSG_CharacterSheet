@@ -260,6 +260,16 @@ button.sheet-challenge:hover{
   background-position: 0;
 }
 
+button.sheet-reroll {
+	position				: relative;
+	top						: 35px;
+}
+
+select.sheet-reroll {
+	position				: relative;
+	top						: 35px;
+}
+
 div.sheet-item-name input.sheet-text {
 	text-align				: center;
 	font-weight				: bold;

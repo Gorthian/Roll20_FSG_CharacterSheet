@@ -348,6 +348,14 @@
 		</table>		
 		<div style="height:100% !important; text-align: center; vertical-align: center;">
 			<button type="action" class="sheet-challenge" name="act_challenge"></button>
+			<button type="action" class="sheet-reroll" name="act_reroll"><span data-i18n="reroll-u"></span></button>
+			<select class="sheet-reroll" name="attr_challenge_reroll_dice">
+				<option value="1" selected>1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
 		</div>
 	</div>
 	<div class="sheet-box sheet-who">
@@ -391,11 +399,10 @@
 		{{/allprops() pool result}}
 		<div class="sheet-template-row">
 			<div class="sheet-template-key"><span data-i18n="result-u"></span>:</div>
-			<div class="sheet-template-value">{{computed::1}}</div>			 
+			<div class="sheet-template-value">{{computed::result}}</div>			 
 		</div>
 	</div>
 </rolltemplate>
-
 <!-- Sheet Workers //-->
 <script type="text/worker">
 	/********************************/
@@ -425,6 +432,7 @@
 	});
 
 	on("clicked:challenge", function() {rollChallenge()});
+	on("clicked:reroll", function() {rerollChallenge()});
 	
 	/********************************/
 	/* Funktionen                   */
@@ -438,30 +446,88 @@
 			let iChallengeDices = values["challenge_dices"]||1;
 			let iCounter = 1;
 			let iRollSum = iChallengePool;
-			let sRoll = ""
+			let sRoll = "";
 
-			sRoll = "&{template:challenge} {{pool=@{challenge_pool}}}"
+			sRoll = "&{template:challenge} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
 			while (iCounter <= iChallengeDices) {
 				sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
 				iCounter = iCounter + 1;
 			}
 
-			console.log(sRoll);
 			startRoll(sRoll, (results) => {
+					let aAttributes = {};
+
 					iCounter = iCounter - 1;
 					while (iCounter > 0)
 					{
 						iRollSum = iRollSum + results.results[iCounter].result;
+						aAttributes["challenge_roll_" + iCounter] = results.results[iCounter].result;
 						iCounter = iCounter - 1;
 					}
-					console.log("Summe : " + iRollSum)
+					setAttrs(aAttributes);
+					
 					finishRoll(
 						results.rollId, {
-							1: iRollSum
+							result: iRollSum
 						}
 					);
-			});
+			});			
 		});				
+	}
+
+	function rerollChallenge()
+	{
+		console.log("rerollChallenge")
+		getAttrs(["challenge_pool","challenge_dices","challenge_reroll_dice","challenge_roll_1","challenge_roll_2","challenge_roll_3","challenge_roll_4","challenge_roll_5"], function (values){
+			let iChallengePool = values["challenge_pool"]||0;
+			let iChallengeRerollDice = values["challenge_reroll_dice"]||1;
+			let iChallengeDices = values["challenge_dices"]||1;
+			let iChallengeDice1 = values["challenge_roll_1"]||0;
+			let iChallengeDice2 = values["challenge_roll_2"]||0;
+			let iChallengeDice3 = values["challenge_roll_3"]||0;
+			let iChallengeDice4 = values["challenge_roll_4"]||0;
+			let iChallengeDice5 = values["challenge_roll_5"]||0;
+			let sRoll = "";
+			let iCounter = 1;
+			let iRollSum = iChallengePool;
+
+			sRoll = "&{template:challenge} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
+
+			while (iCounter <= iChallengeDices) {
+				if (iCounter == iChallengeRerollDice) {
+					sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
+				} else {
+					sRoll = sRoll + " {{" + iCounter + "=" + eval("iChallengeDice" + iCounter) + "}}"
+				}
+				
+				iCounter = iCounter + 1;
+			}
+
+			startRoll(sRoll, (results) => {
+				let aAttributes = {};
+	
+				iCounter = iCounter - 1;
+				while (iCounter > 0)
+				{
+					if (iCounter == iChallengeRerollDice) {
+						iRollSum = iRollSum + results.results[iCounter].result;
+						aAttributes["challenge_roll_" + iCounter] = results.results[iCounter].result;
+					} else {
+						iRollSum = iRollSum + eval("iChallengeDice" + iCounter);
+						aAttributes["challenge_roll_" + iCounter] = eval("iChallengeDice" + iCounter);
+					}
+					
+					iCounter = iCounter - 1;
+				}
+				setAttrs(aAttributes);
+				
+				finishRoll(
+					results.rollId, {
+						result: iRollSum
+					}
+				);
+			});
+		});
 	}
 	
 	function setActiveSkill()
