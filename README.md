@@ -3,6 +3,10 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 
 # History
 
+## 2021-11-09
+- Rerolls für Herausforderungen
+- Version 1.0 veröffentlicht
+
 ## 2021-11-08
 - Bonuswürfel für Herausforderungen
 
