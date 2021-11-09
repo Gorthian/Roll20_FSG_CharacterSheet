@@ -492,14 +492,14 @@
 
 			while (iCounter <= iChallengeDices) {
 				if (iCounter == iChallengeRerollDice) {
-					sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
+					sRoll = sRoll + " {{" + iCounter + "=[[1d10r<" + eval("iChallengeDice" + iChallengeRerollDice) + "]]}}"
 				} else {
 					sRoll = sRoll + " {{" + iCounter + "=" + eval("iChallengeDice" + iCounter) + "}}"
 				}
 				
 				iCounter = iCounter + 1;
 			}
-
+			console.log(sRoll);
 			startRoll(sRoll, (results) => {
 				let aAttributes = {};
 	
