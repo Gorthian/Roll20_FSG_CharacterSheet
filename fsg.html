@@ -347,7 +347,7 @@
 			</tr>			
 		</table>		
 		<div style="height:100% !important; text-align: center; vertical-align: center;">
-			<button type="roll" class="sheet-challenge" name="roll_challenge" value="&{template:challenge} {{pool=@{challenge_pool}}} {{dices=@{challenge_dices}}} {{result=[[@{challenge_dices}d10+@{challenge_pool}]]}}"></button>
+			<button type="action" class="sheet-challenge" name="act_challenge"></button>
 		</div>
 	</div>
 	<div class="sheet-box sheet-who">
@@ -422,10 +422,22 @@
 	on("sheet:opened change:challenge_use_advantages change:challenge_attribute_value change:challenge_skill_value change:challenge_item_bonus change:stress change:exhaustion change:pain change:hunger change:misc change:advantage change:challenge_bonus_dices", function () {
 		recalcChallenge();
 	});
+
+	on("clicked:challenge", function() {rollChallenge()});
 	
 	/********************************/
 	/* Funktionen                   */
 	/********************************/
+	
+	function rollChallenge()
+	{
+		console.log("rollChallenge");
+		startRoll("&{template:challenge} {{pool=@{challenge_pool}}} {{dices=@{challenge_dices}}} {{result=[[@{challenge_dices}d10+@{challenge_pool}]]}}", (results) => {
+				finishRoll(
+					results.rollId,{roll1: 0}
+				);
+		});		
+	}
 	
 	function setActiveSkill()
 	{
