@@ -1,8 +1,8 @@
 /*
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
-	Version				1.0
-	Letzte Änderung		2021-11-09
+	Version				1.1
+	Letzte Änderung		2021-11-14
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -128,30 +128,6 @@ div.sheet-item-empty{grid-area: item-empty;}
 div.sheet-status-stress, div.sheet-status-exhaustion, div.sheet-status-pain, div.sheet-status-hunger,
 div.sheet-status-misc, div.sheet-status-advantage, div.sheet-status-disadvantage {
 		text-align			: center;
-}
-
-textarea.sheet-text, input.sheet-text {
-	width					: 98%;
-	border					: 0;
-	background-color		: rgba(0, 0, 0, 0);
-	color					: black;
-}
-
-textarea.sheet-text {
-	height					: 40px;
-}
-
-input.sheet-number {
-	width					: 25px !important;
-	text-align				: center;
-	border					: 0;
-	background-color		: rgba(0, 0, 0, 0);
-	color					: black;
-	-moz-appearance			: textfield;
-}
-
-input.sheet-title {
-	font-weight				: bold;
 }
 
 img.sheet-reserve-image, img.sheet-status-image {
@@ -304,6 +280,47 @@ td.sheet-align-right {
 
 td.sheet-width-50 {
 	width					: 50%;
+}
+
+/************************************/
+/*		Eingabe-Felder  			*/
+/************************************/
+
+/* Pfeile in den Eingabefeldern verbergen */
+/* Chrome, Safari, Edge, Opera*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Pfeile in den Eingabefeldern verbergen */
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+  }
+
+input.sheet-number {
+	width					: 25px !important;
+	text-align				: center;
+	border					: 0;
+	background-color		: rgba(0, 0, 0, 0);
+	color					: black;
+}
+
+input.sheet-title {
+	font-weight				: bold;
+}
+
+textarea.sheet-text, input.sheet-text {
+	width					: 98%;
+	border					: 0;
+	background-color		: rgba(0, 0, 0, 0);
+	color					: black;
+}
+
+textarea.sheet-text {
+	height					: 40px;
 }
 
 /************************************/
