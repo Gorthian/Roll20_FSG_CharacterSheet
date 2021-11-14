@@ -3,6 +3,9 @@ https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
 
 # History
 
+## 2021-11-14
+- Bugfix: Pfeile in Eingabefeldern in Chrome und Edge verbergen
+
 ## 2021-11-09
 - Rerolls für Herausforderungen
 - Version 1.0 veröffentlicht
