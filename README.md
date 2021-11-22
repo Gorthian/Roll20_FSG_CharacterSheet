@@ -1,7 +1,7 @@
 # Allgemein
 
-Dieser Bogen für das Setting **Freude schöner Götterfunke** unter dem Regelwerk **Icarus Adventure System** entstand als Communityprojekt in direkter Zusammenarbeit mit Donnerhaus.
-Das projekt wurde inspieriert von Hitdice, die auch den Entwicklungsprozess in verschiedenen YouTube-Videos begleitet haben.
+Dieser Bogen für das Setting **Freude, schöner Götterfunke** unter dem Regelwerk **Icarus Adventure System** entstand als Communityprojekt in direkter Zusammenarbeit mit Donnerhaus.
+Das Projekt wurde inspiriert von Hitdice, die auch den Entwicklungsprozess in verschiedenen YouTube-Videos begleitet haben.
 
 Donnerhaus: https://www.donnerhaus.eu/
 Icarus Adventure System: https://www.donnerhaus.eu/spiele/icarus/
