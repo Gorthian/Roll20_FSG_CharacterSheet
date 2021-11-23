@@ -19,7 +19,10 @@ Forum: https://github.com/Gorthian/FSG_CharacterSheet_Roll20/discussions
 
 # History
 
-##VLOG 2021-11-20
+## 2021-11-23
+- Bugfix: Reroll bei 5 Würfeln
+
+## VLOG 2021-11-20
 - Drittes Video mit Hitdice
 
 ## 2021-11-14
