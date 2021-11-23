@@ -4,8 +4,11 @@ Dieser Bogen für das Setting **Freude, schöner Götterfunke** unter dem Regelw
 Das Projekt wurde inspiriert von Hitdice, die auch den Entwicklungsprozess in verschiedenen YouTube-Videos begleitet haben.
 
 Donnerhaus: https://www.donnerhaus.eu/
+
 Icarus Adventure System: https://www.donnerhaus.eu/spiele/icarus/
+
 Freude schöner Götterfunke: https://www.donnerhaus.eu/spiele/freude/
+
 
 Hitdice: https://www.youtube.com/c/hitdice
 
@@ -13,8 +16,11 @@ Hitdice: https://www.youtube.com/c/hitdice
 # Hilfe zum Sheet
 
 Autor: https://github.com/Gorthian
+
 Wiki: https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
+
 Bugs & Features: https://github.com/Gorthian/FSG_CharacterSheet_Roll20/issues
+
 Forum: https://github.com/Gorthian/FSG_CharacterSheet_Roll20/discussions
 
 # History
