@@ -307,7 +307,6 @@ input.sheet-number {
 	text-align				: center;
 	border					: 0;
 	background-color		: rgba(0, 0, 0, 0);
-	color					: black;
 }
 
 input.sheet-title {
@@ -318,7 +317,6 @@ textarea.sheet-text, input.sheet-text {
 	width					: 98%;
 	border					: 0;
 	background-color		: rgba(0, 0, 0, 0);
-	color					: black;
 }
 
 textarea.sheet-text {
@@ -402,15 +400,32 @@ input.sheet-supress-effect:checked + span::before
 /************************************/
 /*		Hoher Kontrast 				*/
 /************************************/
-input.sheet-toggle-contrast:checked ~ .sheet-container,
-input.sheet-toggle-contrast:checked ~ .sheet-title,
+input.sheet-toggle-contrast:checked ~ .sheet-inventory,
+input.sheet-toggle-contrast:checked ~ div.sheet-title,
+input.sheet-toggle-contrast:checked ~ span.sheet-title,
 input.sheet-toggle-contrast:checked ~ .sheet-box {	
 	background-color		: #000000 !important;
 	color					: #FFFFFF !important;
 }
 
-input.sheet-toggle-contrast:checked ~ .sheet-title {
+input.sheet-toggle-contrast:checked ~ input.sheet-text {
+	color					: #FFFFFF !important;
+}
+
+input.sheet-toggle-contrast:checked ~ .sheet-box {	
 	border-color			: #FFFFFF !important;
+}
+
+input.sheet-toggle-contrast:checked ~ .sheet-container
+{
+	background-color		: #FFFFFF !important;
+}
+
+input.sheet-toggle-contrast:checked ~ div.sheet-title,
+input.sheet-toggle-contrast:checked ~ span.sheet-title
+{
+	border 					: 1px solid !important;
+	border-color 			: #FFFFFF !important;
 }
 
 input.sheet-toggle-contrast:checked ~ div.sheet-fsg {	
