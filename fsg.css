@@ -12,7 +12,7 @@
 /*		GRID-Layout					*/
 /************************************/
 
-.sheet-fsg {	
+.sheet-fsg {		
 	background-color		: #645a51;
 	display 				: grid;
 	grid-template-columns	: auto 150px;
@@ -114,13 +114,13 @@ div.sheet-item-empty{grid-area: item-empty;}
 
 .sheet-box {
 		background-color	: #c2af80;
-		display				: grid;
 		border				: 1px solid #b5a883;
+		display				: grid;
 		border-radius		: 10px;
 		margin				: 2px;
 }
 
-.sheet-container {
+.sheet-container {		
 		background-color	: #645a51;
 		display				: grid;
 		border				: none;
@@ -402,6 +402,17 @@ input.sheet-supress-effect:checked + span::before
 /************************************/
 /*		Hoher Kontrast 				*/
 /************************************/
-input.sheet-toggle-contrast:checked ~ div {	
+input.sheet-toggle-contrast:checked ~ .sheet-container,
+input.sheet-toggle-contrast:checked ~ .sheet-title,
+input.sheet-toggle-contrast:checked ~ .sheet-box {	
 	background-color		: #000000 !important;
+	color					: #FFFFFF !important;
+}
+
+input.sheet-toggle-contrast:checked ~ .sheet-title {
+	border-color			: #FFFFFF !important;
+}
+
+input.sheet-toggle-contrast:checked ~ div.sheet-fsg {	
+	background-color		: #FFFFFF !important;
 }
