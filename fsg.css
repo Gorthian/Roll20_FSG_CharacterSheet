@@ -112,24 +112,28 @@ div.sheet-item-empty{grid-area: item-empty;}
 /*		Allgemeine Layouts			*/
 /************************************/
 
+.sheet-hidden {
+	display				: none;
+}
+
 .sheet-box {
-		background-color	: #c2af80;
-		border				: 1px solid #b5a883;
-		display				: grid;
-		border-radius		: 10px;
-		margin				: 2px;
+	background-color	: #c2af80;
+	border				: 1px solid #b5a883;
+	display				: grid;
+	border-radius		: 10px;
+	margin				: 2px;
 }
 
 .sheet-container {		
-		background-color	: #645a51;
-		display				: grid;
-		border				: none;
-		margin				: 0;
+	background-color	: #645a51;
+	display				: grid;
+	border				: none;
+	margin				: 0;
 }
 
 div.sheet-status-stress, div.sheet-status-exhaustion, div.sheet-status-pain, div.sheet-status-hunger,
 div.sheet-status-misc, div.sheet-status-advantage, div.sheet-status-disadvantage {
-		text-align			: center;
+	text-align			: center;
 }
 
 img.sheet-reserve-image, img.sheet-status-image {
@@ -400,10 +404,8 @@ input.sheet-supress-effect:checked + span::before
 /************************************/
 /*		Hoher Kontrast 				*/
 /************************************/
-input.sheet-toggle-contrast:checked ~ .sheet-inventory,
-input.sheet-toggle-contrast:checked ~ div.sheet-title,
-input.sheet-toggle-contrast:checked ~ span.sheet-title,
-input.sheet-toggle-contrast:checked ~ .sheet-box {	
+input.sheet-toggle-contrast:checked ~ .sheet-inventory, input.sheet-toggle-contrast:checked ~ .sheet-box 
+{	
 	background-color		: #000000 !important;
 	color					: #FFFFFF !important;
 }
@@ -421,9 +423,10 @@ input.sheet-toggle-contrast:checked ~ .sheet-container
 	background-color		: #FFFFFF !important;
 }
 
-input.sheet-toggle-contrast:checked ~ div.sheet-title,
-input.sheet-toggle-contrast:checked ~ span.sheet-title
+input.sheet-toggle-contrast:checked ~ .sheet-title
 {
+	background-color		: #000000 !important;
+	color					: #FFFFFF !important;
 	border 					: 1px solid !important;
 	border-color 			: #FFFFFF !important;
 }
