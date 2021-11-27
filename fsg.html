@@ -9,8 +9,12 @@
 //-->
 
 <!-- Sheet //-->
-<div class="sheet-wrapper sheet-content sheet-fsg">
-	<div class="sheet-container sheet-status-effects">
+<div class="sheet-wrapper sheet-content sheet-fsg">	
+	<input type="checkbox" class="sheet-toggle-contrast" name="attr_HighContrast" style="display:none;" />
+	<div class="sheet-high-contrast sheet-title">
+		<span>Hoher Kontrast</span><input type="checkbox" class="sheet-toggle-contrast" name="attr_HighContrast" />
+	</div>	
+	<div class="sheet-container sheet-status-effects">			
 			<div class="sheet-title sheet-status-stress">
 				<img class="sheet-status-image" src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/status-icon.png" />
 				<br/><button type="action" class="sheet-minus" name="act_stress-minus"></button><input type="number" class="sheet-number" name="attr_stress" placeholder="0" /><button type="action" class="sheet-plus" name="act_stress-plus"></button>
@@ -42,7 +46,7 @@
 				<br/><span data-i18n="disadvantage-u"></span>/<span data-i18n="advantage-u"></span>
 			</div>
 	</div>	
-	<div class="sheet-container sheet-content">
+	<div class="sheet-container sheet-content">		
 		<div class="sheet-general">
 			<div class="sheet-box sheet-name">
 				<span class="sheet-title">

@@ -16,7 +16,8 @@
 	background-color		: #645a51;
 	display 				: grid;
 	grid-template-columns	: auto 150px;
-	grid-template-areas		: 	"status-effects	sidebar"
+	grid-template-areas		: 	"high-contrast high-contrast"
+								"status-effects	sidebar"
 								"sheet-content	sidebar"
 								"inventory		inventory"
 								"who 			who"
@@ -41,6 +42,7 @@ div.sheet-general {
 								"skills specials specials"
 }
 
+div.sheet-high-contrast {grid-area: high-contrast;}
 div.sheet-eat {grid-area: eat;}
 div.sheet-drink {grid-area: drink;}
 div.sheet-home {grid-area: home;}
@@ -395,4 +397,11 @@ input.sheet-supress-effect:checked + span::before
 
 .sheet-rolltemplate-challenge .sheet-template-value {
 	grid-area				: value;
+}
+
+/************************************/
+/*		Hoher Kontrast 				*/
+/************************************/
+input.sheet-toggle-contrast:checked ~ div {	
+	background-color		: #000000 !important;
 }
