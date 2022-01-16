@@ -416,17 +416,17 @@
 			<div class="sheet-template-key"><span data-i18n="difficulty-u"></span>:</div>
 			<div class="sheet-template-value">{{difficulty}}</div>			
 		</div>
-		{{#allprops() pool result difficulty}}
+		{{#allprops() pool result difficulty level}}
 		<div class="sheet-template-row">
 			<div class="sheet-template-key"><span data-i18n="dice-u"></span> {{key}}:</div>
 			<div class="sheet-template-value">{{value}}</div>
 		</div>
-		{{/allprops() pool result difficulty}}
+		{{/allprops() pool result difficulty level}}
 		<div class="sheet-template-row">
 			<div class="sheet-template-key"><span data-i18n="result-u"></span>:</div>
 			<div class="sheet-template-value">{{computed::result}}</div>			 
 		</div>
-		<div class="sheet-template-header">{{success_level::result}}</div>
+		<div class="sheet-template-header">{{computed::level}}</div>
 	</div>
 </rolltemplate>
 <!-- Sheet Workers //-->
@@ -475,7 +475,7 @@
 			let iRollSum = iChallengePool;
 			let sRoll = "";
 
-			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
+			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}} {{level=[[1d10]]}}"
 			while (iCounter <= iChallengeDices) {
 				sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
 				iCounter = iCounter + 1;
@@ -484,6 +484,7 @@
 			startRoll(sRoll, (results) => {
 					let aAttributes = {};	
 					let iLevel = 0;	
+					let sLevel = "";
 
 					iCounter = iCounter - 1;
 					while (iCounter > 0)
@@ -492,19 +493,19 @@
 						aAttributes["challenge_roll_" + iCounter] = results.results[iCounter].result;
 						iCounter = iCounter - 1;
 					}
-					iLevel = iRollSum - iChallengeDifficulty;
-					console.log(iLevel);
-					if (iLevel < -15) {console.log("Nicht erlaubt");} else
-					if (iLevel < -10) {console.log("Nein, und");} else
-					if (iLevel < -5) {console.log("Nein");} else
-					if (iLevel < 0) {console.log("Nein, aber");} else
-					if (iLevel < 5) {console.log("Ja, aber");} else
-					if (iLevel < 15) {console.log("Ja");} else {console.log("Ja, und");}							
+					iLevel = iRollSum - iChallengeDifficulty;					
+					if (iLevel < -15) {sLevel = "Nicht erlaubt";} else
+					if (iLevel < -10) {sLevel = "Nein, und";} else
+					if (iLevel < -5) {sLevel = "Nein";} else
+					if (iLevel < 0) {sLevel = "Nein, aber";} else
+					if (iLevel < 5) {sLevel = "Ja, aber";} else
+					if (iLevel < 15) {sLevel = "Ja";} else {sLevel = "Ja, und";}
 					setAttrs(aAttributes);
-					
+
 					finishRoll(
 						results.rollId, {
-							result: iRollSum
+							result: iRollSum,
+							level: sLevel
 						}
 					);
 			});			
@@ -528,7 +529,7 @@
 			let iCounter = 1;
 			let iRollSum = iChallengePool;
 
-			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
+			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}} {{level=[[1d10]]}}"
 
 			while (iCounter <= iChallengeDices) {
 				if (iCounter == iChallengeRerollDice) {
@@ -542,6 +543,8 @@
 			console.log(sRoll);
 			startRoll(sRoll, (results) => {
 				let aAttributes = {};
+				let iLevel = 0;	
+				let sLevel = "";
 	
 				iCounter = iCounter - 1;
 				while (iCounter > 0)
@@ -552,15 +555,24 @@
 					} else {
 						iRollSum = iRollSum + eval("iChallengeDice" + iCounter);
 						aAttributes["challenge_roll_" + iCounter] = eval("iChallengeDice" + iCounter);
-					}
+					}					
 					
 					iCounter = iCounter - 1;
 				}
+				iLevel = iRollSum - iChallengeDifficulty;					
+				if (iLevel < -15) {sLevel = "Nicht erlaubt";} else
+				if (iLevel < -10) {sLevel = "Nein, und";} else
+				if (iLevel < -5) {sLevel = "Nein";} else
+				if (iLevel < 0) {sLevel = "Nein, aber";} else
+				if (iLevel < 5) {sLevel = "Ja, aber";} else
+				if (iLevel < 15) {sLevel = "Ja";} else {sLevel = "Ja, und";}
+
 				setAttrs(aAttributes);
 				
 				finishRoll(
 					results.rollId, {
-						result: iRollSum
+						result: iRollSum,
+						level: sLevel
 					}
 				);
 			});
