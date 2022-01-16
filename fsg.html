@@ -494,12 +494,12 @@
 						iCounter = iCounter - 1;
 					}
 					iLevel = iRollSum - iChallengeDifficulty;					
-					if (iLevel < -15) {sLevel = "Nicht erlaubt";} else
-					if (iLevel < -10) {sLevel = "Nein, und";} else
-					if (iLevel < -5) {sLevel = "Nein";} else
-					if (iLevel < 0) {sLevel = "Nein, aber";} else
-					if (iLevel < 5) {sLevel = "Ja, aber";} else
-					if (iLevel < 15) {sLevel = "Ja";} else {sLevel = "Ja, und";}
+					if (iLevel < -15) {sLevel = getTranslationByKey("challenge-level-0-u");} else
+					if (iLevel < -10) {sLevel = getTranslationByKey("challenge-level-1-u");} else
+					if (iLevel < -5) {sLevel = getTranslationByKey("challenge-level-2-u");} else
+					if (iLevel < 0) {sLevel = getTranslationByKey("challenge-level-3-u");} else
+					if (iLevel < 5) {sLevel = getTranslationByKey("challenge-level-4-u");} else
+					if (iLevel < 15) {sLevel = getTranslationByKey("challenge-level-5-u");} else {sLevel = getTranslationByKey("challenge-level-6-u");}
 					setAttrs(aAttributes);
 
 					finishRoll(
@@ -560,12 +560,12 @@
 					iCounter = iCounter - 1;
 				}
 				iLevel = iRollSum - iChallengeDifficulty;					
-				if (iLevel < -15) {sLevel = "Nicht erlaubt";} else
-				if (iLevel < -10) {sLevel = "Nein, und";} else
-				if (iLevel < -5) {sLevel = "Nein";} else
-				if (iLevel < 0) {sLevel = "Nein, aber";} else
-				if (iLevel < 5) {sLevel = "Ja, aber";} else
-				if (iLevel < 15) {sLevel = "Ja";} else {sLevel = "Ja, und";}
+				if (iLevel < -15) {sLevel = getTranslationByKey("challenge-level-0-u");} else
+				if (iLevel < -10) {sLevel = getTranslationByKey("challenge-level-1-u");} else
+				if (iLevel < -5) {sLevel = getTranslationByKey("challenge-level-2-u");} else
+				if (iLevel < 0) {sLevel = getTranslationByKey("challenge-level-3-u");} else
+				if (iLevel < 5) {sLevel = getTranslationByKey("challenge-level-4-u");} else
+				if (iLevel < 15) {sLevel = getTranslationByKey("challenge-level-5-u");} else {sLevel = getTranslationByKey("challenge-level-6-u");}
 
 				setAttrs(aAttributes);
 				

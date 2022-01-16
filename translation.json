@@ -62,5 +62,12 @@
 	"difficulty-30-u": "30 - Kaum zu schaffen",
 	"difficulty-40-u": "40 - Übermenschlich",
 	"difficulty-50-u": "50 - Unglaublich",
-	"difficulty-60-u": "60 - Legendär"
+	"difficulty-60-u": "60 - Legendär",
+	"challenge-level-0-u": "Nicht erlaubt",
+	"challenge-level-1-u": "Nein, und",
+	"challenge-level-2-u": "Nein",
+	"challenge-level-3-u": "Nein, aber",
+	"challenge-level-4-u": "Ja, aber",
+	"challenge-level-5-u": "Ja",
+	"challenge-level-6-u": "Ja, und"
 }
