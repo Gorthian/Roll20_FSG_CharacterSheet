@@ -52,5 +52,15 @@
 	"result-u": "Ergebnis",
 	"challenge-formula-u": "Wurf",
 	"reroll-u": "Würfel neu werfen",
-	"difficulty-u": "Schwierigkeit"
+	"difficulty-u": "Schwierigkeit",
+	"difficulty-0-u": "0 - Kinderspiel",
+	"difficulty-5-u": "5 - Trivial",
+	"difficulty-10-u": "10 - Einfach",
+	"difficulty-15-u": "15 - Routine",
+	"difficulty-20-u": "20 - Fordernd",
+	"difficulty-25-u": "25 - Schwierig",
+	"difficulty-30-u": "30 - Kaum zu schaffen",
+	"difficulty-40-u": "40 - Übermenschlich",
+	"difficulty-50-u": "50 - Unglaublich",
+	"difficulty-60-u": "60 - Legendär"
 }

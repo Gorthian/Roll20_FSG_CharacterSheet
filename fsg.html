@@ -456,7 +456,7 @@
 			let iRollSum = iChallengePool;
 			let sRoll = "";
 
-			sRoll = "&{template:challenge} {{difficulty=?{Schwierigkeit|Kinderspiel,0|Trivial,5|Einfach,10|Routine,15|Fordernd,20|Schwierig,25|Kaum zu schaffen,30|Übermenschlich,40|Unglaublich,50|Legendär,60}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
+			sRoll = "&{template:challenge} {{difficulty=?{"+ getTranslationByKey("difficulty-u") + "|" + getTranslationByKey("difficulty-0-u") + ",0|" + getTranslationByKey("difficulty-5-u") + ",5|" + getTranslationByKey("difficulty-10-u") + ",10|" + getTranslationByKey("difficulty-15-u") + ",15|" + getTranslationByKey("difficulty-20-u") + ",20|" + getTranslationByKey("difficulty-25-u") + ",25|" + getTranslationByKey("difficulty-30-u") + ",30|" + getTranslationByKey("difficulty-40-u") + ",40|" + getTranslationByKey("difficulty-50-u") + ",50|" + getTranslationByKey("difficulty-60-u") + ",60}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
 			while (iCounter <= iChallengeDices) {
 				sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
 				iCounter = iCounter + 1;
