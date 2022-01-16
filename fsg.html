@@ -1,8 +1,8 @@
 <!--
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
-	Version				1.2
-	Letzte Änderung		2021-11-28
+	Version				1.3
+	Letzte Änderung		2022-01-16
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -214,6 +214,22 @@
 		<span class="sheet-title" data-i18n="challenge-u"></span>		
 		<table>
 			<tr>
+				<td colspan="3">					
+					<select class="sheet-fullwidth" name="attr_challenge_difficulty">
+						<option value="0" data-i18n="difficulty-0-u">0</option>
+						<option value="5" data-i18n="difficulty-5-u">5</option>
+						<option value="10" data-i18n="difficulty-10-u">10</option>
+						<option value="15" data-i18n="difficulty-15-u">15</option>
+						<option value="20" data-i18n="difficulty-20-u">20</option>
+						<option value="25" data-i18n="difficulty-25-u">25</option>
+						<option value="30" data-i18n="difficulty-30-u">30</option>
+						<option value="40" data-i18n="difficulty-40-u">40</option>
+						<option value="50" data-i18n="difficulty-50-u">50</option>
+						<option value="60" data-i18n="difficulty-60-u">60</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
 				<td colspan="2">
 					<span class="sheet-label" name="attr_challenge_attribute_name"></span>
 				</td>
@@ -349,6 +365,7 @@
 		</table>		
 		<div style="height:100% !important; text-align: center; vertical-align: center;">
 			<button type="action" class="sheet-challenge" name="act_challenge"></button>
+			
 			<button type="action" class="sheet-reroll" name="act_reroll"><span data-i18n="reroll-u"></span></button>
 			<select class="sheet-reroll" name="attr_challenge_reroll_dice">
 				<option value="1" selected>1</option>
@@ -456,7 +473,7 @@
 			let iRollSum = iChallengePool;
 			let sRoll = "";
 
-			sRoll = "&{template:challenge} {{difficulty=?{"+ getTranslationByKey("difficulty-u") + "|" + getTranslationByKey("difficulty-0-u") + ",0|" + getTranslationByKey("difficulty-5-u") + ",5|" + getTranslationByKey("difficulty-10-u") + ",10|" + getTranslationByKey("difficulty-15-u") + ",15|" + getTranslationByKey("difficulty-20-u") + ",20|" + getTranslationByKey("difficulty-25-u") + ",25|" + getTranslationByKey("difficulty-30-u") + ",30|" + getTranslationByKey("difficulty-40-u") + ",40|" + getTranslationByKey("difficulty-50-u") + ",50|" + getTranslationByKey("difficulty-60-u") + ",60}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
+			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
 			while (iCounter <= iChallengeDices) {
 				sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
 				iCounter = iCounter + 1;
@@ -464,6 +481,7 @@
 
 			startRoll(sRoll, (results) => {
 					let aAttributes = {};
+					console.log(results.results);
 
 					iCounter = iCounter - 1;
 					while (iCounter > 0)
@@ -495,11 +513,12 @@
 			let iChallengeDice3 = values["challenge_roll_3"]||0;
 			let iChallengeDice4 = values["challenge_roll_4"]||0;
 			let iChallengeDice5 = values["challenge_roll_5"]||0;
+			let iChallengeDifficulty = values["challenge_roll_difficulty"]||15;
 			let sRoll = "";
 			let iCounter = 1;
 			let iRollSum = iChallengePool;
 
-			sRoll = "&{template:challenge} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
+			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
 
 			while (iCounter <= iChallengeDices) {
 				if (iCounter == iChallengeRerollDice) {
