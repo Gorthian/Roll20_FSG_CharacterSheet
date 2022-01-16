@@ -515,7 +515,7 @@
 	function rerollChallenge()
 	{
 		console.log("rerollChallenge")
-		getAttrs(["challenge_pool","challenge_dices","challenge_reroll_dice","challenge_roll_1","challenge_roll_2","challenge_roll_3","challenge_roll_4","challenge_roll_5"], function (values){
+		getAttrs(["challenge_pool","challenge_dices","challenge_reroll_dice","challenge_roll_1","challenge_roll_2","challenge_roll_3","challenge_roll_4","challenge_roll_5","challenge_difficulty"], function (values){
 			let iChallengePool = values["challenge_pool"]||0;
 			let iChallengeRerollDice = values["challenge_reroll_dice"]||1;
 			let iChallengeDices = values["challenge_dices"]||1;
@@ -524,7 +524,7 @@
 			let iChallengeDice3 = values["challenge_roll_3"]||0;
 			let iChallengeDice4 = values["challenge_roll_4"]||0;
 			let iChallengeDice5 = values["challenge_roll_5"]||0;
-			let iChallengeDifficulty = values["challenge_roll_difficulty"]||15;
+			let iChallengeDifficulty = values["challenge_difficulty"]||15;
 			let sRoll = "";
 			let iCounter = 1;
 			let iRollSum = iChallengePool;
