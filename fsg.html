@@ -426,6 +426,7 @@
 			<div class="sheet-template-key"><span data-i18n="result-u"></span>:</div>
 			<div class="sheet-template-value">{{computed::result}}</div>			 
 		</div>
+		<div class="sheet-template-header">{{success_level::result}}</div>
 	</div>
 </rolltemplate>
 <!-- Sheet Workers //-->
@@ -466,9 +467,10 @@
 	function rollChallenge()
 	{
 		console.log("rollChallenge");
-		getAttrs(["challenge_pool","challenge_dices"], function (values){
+		getAttrs(["challenge_pool","challenge_dices","challenge_difficulty"], function (values){
 			let iChallengePool = values["challenge_pool"]||0;
 			let iChallengeDices = values["challenge_dices"]||1;
+			let iChallengeDifficulty = values["challenge_difficulty"]||15;
 			let iCounter = 1;
 			let iRollSum = iChallengePool;
 			let sRoll = "";
@@ -480,8 +482,8 @@
 			}
 
 			startRoll(sRoll, (results) => {
-					let aAttributes = {};
-					console.log(results.results);
+					let aAttributes = {};	
+					let iLevel = 0;	
 
 					iCounter = iCounter - 1;
 					while (iCounter > 0)
@@ -490,6 +492,14 @@
 						aAttributes["challenge_roll_" + iCounter] = results.results[iCounter].result;
 						iCounter = iCounter - 1;
 					}
+					iLevel = iRollSum - iChallengeDifficulty;
+					console.log(iLevel);
+					if (iLevel < -15) {console.log("Nicht erlaubt");} else
+					if (iLevel < -10) {console.log("Nein, und");} else
+					if (iLevel < -5) {console.log("Nein");} else
+					if (iLevel < 0) {console.log("Nein, aber");} else
+					if (iLevel < 5) {console.log("Ja, aber");} else
+					if (iLevel < 15) {console.log("Ja");} else {console.log("Ja, und");}							
 					setAttrs(aAttributes);
 					
 					finishRoll(
