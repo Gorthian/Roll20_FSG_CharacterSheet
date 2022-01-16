@@ -395,12 +395,16 @@
 			<div class="sheet-template-key"><span data-i18n="pool-u"></span>:</div>
 			<div class="sheet-template-value">{{pool}}</div>			
 		</div>
-		{{#allprops() pool result}}
+		<div class="sheet-template-row">
+			<div class="sheet-template-key"><span data-i18n="difficulty-u"></span>:</div>
+			<div class="sheet-template-value">{{difficulty}}</div>			
+		</div>
+		{{#allprops() pool result difficulty}}
 		<div class="sheet-template-row">
 			<div class="sheet-template-key"><span data-i18n="dice-u"></span> {{key}}:</div>
 			<div class="sheet-template-value">{{value}}</div>
 		</div>
-		{{/allprops() pool result}}
+		{{/allprops() pool result difficulty}}
 		<div class="sheet-template-row">
 			<div class="sheet-template-key"><span data-i18n="result-u"></span>:</div>
 			<div class="sheet-template-value">{{computed::result}}</div>			 
@@ -452,7 +456,7 @@
 			let iRollSum = iChallengePool;
 			let sRoll = "";
 
-			sRoll = "&{template:challenge} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
+			sRoll = "&{template:challenge} {{difficulty=?{Schwierigkeit|Kinderspiel,0|Trivial,5|Einfach,10|Routine,15|Fordernd,20|Schwierig,25|Kaum zu schaffen,30|Übermenschlich,40|Unglaublich,50|Legendär,60}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}}"
 			while (iCounter <= iChallengeDices) {
 				sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
 				iCounter = iCounter + 1;
