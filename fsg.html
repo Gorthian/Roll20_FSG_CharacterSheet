@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				1.3
-	Letzte Änderung		2022-01-16
+	Letzte Änderung		2022-02-07
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -464,6 +464,20 @@
 	/* Funktionen                   */
 	/********************************/
 	
+	function calcChallengeLevel(iLevel) {
+		let sLevel = ""
+		
+		if (iLevel < -15) {sLevel = getTranslationByKey("challenge-level-0-u");} else	//-16 und weniger	-> Verboten
+		if (iLevel < -10) {sLevel = getTranslationByKey("challenge-level-1-u");} else	//-11 bis -15 		-> Nein, und
+		if (iLevel < -5) {sLevel = getTranslationByKey("challenge-level-2-u");} else	//-6 bis -10 		-> Nein
+		if (iLevel < 0) {sLevel = getTranslationByKey("challenge-level-3-u");} else		//-1 bis -5 		-> Nein, aber
+		if (iLevel < 10) {sLevel = getTranslationByKey("challenge-level-4-u");} else    //0 bis 9			-> Ja, aber
+		if (iLevel < 20) {sLevel = getTranslationByKey("challenge-level-5-u");} else 	//10 bis 19			-> Ja
+		{sLevel = getTranslationByKey("challenge-level-6-u");}							//20 und mehr		-> Ja, und
+	
+		return sLevel;
+	}
+	
 	function rollChallenge()
 	{
 		console.log("rollChallenge");
@@ -494,12 +508,8 @@
 						iCounter = iCounter - 1;
 					}
 					iLevel = iRollSum - iChallengeDifficulty;					
-					if (iLevel < -15) {sLevel = getTranslationByKey("challenge-level-0-u");} else
-					if (iLevel < -10) {sLevel = getTranslationByKey("challenge-level-1-u");} else
-					if (iLevel < -5) {sLevel = getTranslationByKey("challenge-level-2-u");} else
-					if (iLevel < 0) {sLevel = getTranslationByKey("challenge-level-3-u");} else
-					if (iLevel < 5) {sLevel = getTranslationByKey("challenge-level-4-u");} else
-					if (iLevel < 15) {sLevel = getTranslationByKey("challenge-level-5-u");} else {sLevel = getTranslationByKey("challenge-level-6-u");}
+					sLevel = calcChallengeLevel(iLevel);
+					
 					setAttrs(aAttributes);
 
 					finishRoll(
@@ -560,12 +570,7 @@
 					iCounter = iCounter - 1;
 				}
 				iLevel = iRollSum - iChallengeDifficulty;					
-				if (iLevel < -15) {sLevel = getTranslationByKey("challenge-level-0-u");} else
-				if (iLevel < -10) {sLevel = getTranslationByKey("challenge-level-1-u");} else
-				if (iLevel < -5) {sLevel = getTranslationByKey("challenge-level-2-u");} else
-				if (iLevel < 0) {sLevel = getTranslationByKey("challenge-level-3-u");} else
-				if (iLevel < 5) {sLevel = getTranslationByKey("challenge-level-4-u");} else
-				if (iLevel < 15) {sLevel = getTranslationByKey("challenge-level-5-u");} else {sLevel = getTranslationByKey("challenge-level-6-u");}
+				sLevel = calcChallengeLevel(iLevel);
 
 				setAttrs(aAttributes);
 				
