@@ -18,6 +18,9 @@ Das Projekt wurde inspiriert von Hitdice, die auch den Entwicklungsprozess in ve
 
 # History
 
+## 2022-02-07
+- Version 1.3 veröffentlicht
+
 ## 2022-01-16
 - Feature: Ergebnisse der Haerausfoderungen direkt auswerten ("Ja", "Ja, und", usw.)
 
