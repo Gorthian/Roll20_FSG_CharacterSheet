@@ -2,7 +2,7 @@
 	EDITED by 			Gorthian
 	INSPIRED by			Hitdice (https://www.youtube.com/c/Hitdice)
 	Version				1.3
-	Letzte Änderung		2023-01-30
+	Letzte Änderung		2023-06-02
 	
 	GitHub				https://github.com/Gorthian/FSG_CharacterSheet_Roll20
 	Wiki				https://github.com/Gorthian/FSG_CharacterSheet_Roll20/wiki
@@ -53,7 +53,7 @@
 			</div>
 			<div class="sheet-box sheet-eat">
 				<span class="sheet-title" data-i18n="like-eating-u"></span>
-				<span>
+				<span class="sheet-justify-content">
 					<span data-i18n="tasty-u"></span> <input type="radio" name="attr_like-eating" value="1" />
 					<span data-i18n="spicey-u"></span> <input type="radio" name="attr_like-eating" value="2" />
 					<span data-i18n="sweet-u"></span> <input type="radio" name="attr_like-eating" value="3" />
@@ -61,7 +61,7 @@
 			</div>
 			<div class="sheet-box sheet-drink">
 				<span class="sheet-title" data-i18n="like-drinking-u"></span>
-				<span>
+				<span class="sheet-justify-content">
 					<span data-i18n="tea-u"></span> <input type="radio" name="attr_like-drinking" value="1" />
 					<span data-i18n="coffee-u"></span> <input type="radio" name="attr_like-drinking" value="2" />
 					<span data-i18n="beer-u"></span> <input type="radio" name="attr_like-drinking" value="3" />
@@ -69,8 +69,8 @@
 			</div>
 			<div class="sheet-box sheet-home">
 				<span class="sheet-title" data-i18n="home-religion-u"></span>
-				<input type="text" class="sheet-text" name="attr_home" placeholder="Heimat" />
-				<input type="text" class="sheet-text" name="attr_religion" placeholder="Religion" />
+				<textarea type="text" class="sheet-text" name="attr_home" placeholder="Heimat"></textarea>
+				<textarea type="text" class="sheet-text" name="attr_religion" placeholder="Religion"></textarea>
 			</div>
 			<div class="sheet-box sheet-languages">
 				<span class="sheet-title" data-i18n="languages-u"></span>
@@ -80,19 +80,19 @@
 			</div>
 			<div class="sheet-box sheet-reserves">
 				<span class="sheet-title"><span data-i18n="reserves-u"></span> <span data-i18n="max-current-u"></span></span>
-				<span>
+				<span class="sheet-justify-content">
 					<img class="sheet-reserve-image" data-i18n-title="health-u" src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/health.png" />
 					<span class="sheet-reserve"><input class="sheet-number" type="number" name="attr_health_max" />/<input class="sheet-number" type="number" name="attr_health_current" /></span>
 					<img class="sheet-reserve-image" data-i18n-title="stamina-u" src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/stamina.png" />
 					<span class="sheet-reserve"><input class="sheet-number" type="number" name="attr_stamina_max" />/<input class="sheet-number" type="number" name="attr_stamina_current" /></span>
 				</span>
-				<span>
+				<span class="sheet-justify-content">
 					<img class="sheet-reserve-image" data-i18n-title="moral-u" src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/moral.png" />
 					<span class="sheet-reserve"><input class="sheet-number" type="number" name="attr_moral_max" />/<input class="sheet-number" type="number" name="attr_moral_current" /></span>
 					<img class="sheet-reserve-image" data-i18n-title="drama-u" src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/drama.png" />
 					<span class="sheet-reserve"><input class="sheet-number" type="number" name="attr_drama_max" />/<input class="sheet-number" type="number" name="attr_drama_current" /></span>
 				</span>
-				<span>
+				<span class="sheet-justify-content">
 					<img class="sheet-reserve-image" data-i18n-title="damage-u" src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/damage.png" />
 					<span class="sheet-reserve"><input class="sheet-number" type="number" name="attr_damge_max" />/<input class="sheet-number" type="number" name="attr_damage_current" /></span>
 					<img class="sheet-reserve-image" data-i18n-title="armor-u" src="https://raw.githubusercontent.com/Gorthian/FSG_CharacterSheet_Roll20/main/images/armor.png" />
@@ -502,7 +502,7 @@
 			let iRollSum = iChallengePool;
 			let sRoll = "";
 
-			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[1d10]]}} {{level=[[1d10]]}}"
+			sRoll = "&{template:challenge} {{difficulty=@{challenge_difficulty}}} {{pool=@{challenge_pool}}} {{result=[[0]]}} {{level=[[1d10]]}}"
 			while (iCounter <= iChallengeDices) {
 				sRoll = sRoll + " {{" + iCounter + "=[[1d10]]}}"
 				iCounter = iCounter + 1;
